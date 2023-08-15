@@ -26,7 +26,7 @@ export function SliderMovie({endpoint, page}){
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 5
+        slidesToScroll: 4
     };
 
     return(

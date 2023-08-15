@@ -1,26 +1,35 @@
 import React from "react";
 
-export function HoverContent({ movieObject }){
-    
-    const containerHoverStyle = {
-        opacity: '1',
-        width: '100%',
-        height: '328px',
-        top: '0',
-        right: '0',
-        position: 'absolute',
-        background: '#211F1F',
-        backdropFilter: 'blur(3px)'
-    };
-    
-    
-    return(
-        <div style={containerHoverStyle}>
-            <div className="favorite">favorite</div>
-            <div className="title"> title </div>
-            <div className="genre">genre</div>
-            <div className="year">year</div>
-            <div className="rate">rate</div>
-        </div>
-    );
+export function HoverContent({ movieObject, movieGenre }) {
+  return (
+    <div style={{ padding: "20px" }}>
+      <div style={{textAlign:'right'}}>
+        <box-icon name="heart" color='white'></box-icon>
+      </div>
+
+      <div className="title" style={{ fontSize: "20px" ,marginTop:'10px'}}>
+        {movieObject.title}
+      </div>
+      <div style={{ fontSize: "12px", marginTop: "21px" }}>
+        <table style={{ width: "100%" }}>
+          <tbody>
+            <tr>
+              <td style={{ fontWeight: "bold", verticalAlign: "baseline" }}>
+                Genre:
+              </td>
+              <td>{movieGenre}</td>
+            </tr>
+            <tr>
+              <td style={{ fontWeight: "bold" }}>Year:</td>
+              <td>{movieObject.release_date.split("-")[0]}</td>
+            </tr>
+            <tr>
+              <td style={{ fontWeight: "bold" }}>Rating:</td>
+              <td>{movieObject.vote_average}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
