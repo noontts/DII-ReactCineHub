@@ -1,0 +1,15 @@
+a{
+    width: 120px;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 6px 22px;
+    border-radius: 15px;
+    background: #A1E533;
+    color: #FFF;
+    font-weight: 700;
+}
+
+a:hover{
+    background-color: #FFFFFF;
+    color: #A1E533;
+}

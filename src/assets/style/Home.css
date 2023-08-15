@@ -1,0 +1,9 @@
+.custom-slider{
+    width: 1200px;
+}
+.slick-list{
+    height: 550px;
+}
+.slick-prev, .slick-next{
+    top: 45%;
+}

@@ -8,7 +8,7 @@ export function MovieYear({year}){
         backgroundColor: '#D9D9D9',
         borderRadius: '10px',
         padding : '2px 8px',
-        fontSize:'12px',
+        fontSize:'10px',
         color: '#000',
         textAlign: 'center'
     };

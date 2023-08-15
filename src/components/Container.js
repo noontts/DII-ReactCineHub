@@ -1,7 +1,7 @@
 import React from "react";
 
 function Container({ children }){
-    return <main>{children}</main>
+    return <section>{children}</section>
 }
 
 export default Container;
