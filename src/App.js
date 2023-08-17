@@ -1,5 +1,6 @@
 import Container from "./components/Container";
 import { Navbar } from "./components/Navbar";
+import { Banner } from "./components/Banner";
 import "./App.css";
 
 
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Container>
-        main
+        <Banner></Banner>
       </Container>
     </div>
   );
