@@ -37,6 +37,7 @@
     display: flex;
     justify-content: space-between;
     font-weight: ExtraBold;
+    align-items: center;
 }
 .detail-container{
     height: 150px;
