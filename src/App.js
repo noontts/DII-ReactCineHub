@@ -1,6 +1,6 @@
 import Container from "./components/Container";
-import { Navbar } from "./components/Navbar"
 import { Home } from "./pages/Home"
+import { Navbar } from "./components/Navbar/Navbar"
 import "./App.css";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <Navbar/>
       <Container>
         <Home/>
-      </Container>
+      <Container/>
     </div>
   );
 }
