@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../assets/style/Home.css"
 import Slider from "react-slick";
 import { MovieCard } from '../components/MovieCard'
-import { fetchData } from "../services/movieAPI";
+import { fetchData } from "../services/movieapi";
 
 
 export function SliderMovie({endpoint, page}){
