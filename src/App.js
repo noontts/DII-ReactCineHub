@@ -1,5 +1,5 @@
 import Container from "./components/Container";
-import { Navbar } from "./components/Navbar/Navbar.js"
+import { Navbar } from "./components/Navbar/Navbar"
 
 import "./App.css";
 

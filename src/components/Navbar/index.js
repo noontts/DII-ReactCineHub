@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar";
 
 
 
-export function Nav(){
+export default function Nav(){
     return (
         <Navbar/>
     );
