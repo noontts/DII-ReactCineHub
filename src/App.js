@@ -1,4 +1,5 @@
 import Container from "./components/Container";
+
 import { Navbar } from "./components/Navbar/Navbar"
 
 import "./App.css";
@@ -8,8 +9,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Container>
-
-      </Container>
+      <Container/>
     </div>
   );
 }
