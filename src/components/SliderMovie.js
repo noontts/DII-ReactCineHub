@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import "../assets/style/Home.css"
+import "../assets/style/Slider.css"
 import Slider from "react-slick";
 import { MovieCard } from '../components/MovieCard'
 import { fetchData } from "../services/movieapi";
@@ -25,7 +23,7 @@ export function SliderMovie({endpoint, page}){
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 4
     };
 

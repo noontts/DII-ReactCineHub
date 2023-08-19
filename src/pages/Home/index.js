@@ -1,18 +1,26 @@
 import React from "react";
-import "../../assets/style/Home.css"
+import "../../assets/style/Home.css";
 import { SliderMovie } from "../../components/SliderMovie";
-
-export function Home(){
-    return (
-        <>
-        <h2>Now Playing</h2>
-            <SliderMovie endpoint={'now_playing'}/>
-        <h2>Popular</h2>
-            <SliderMovie endpoint={'popular'}/>
-        <h2>Top Rated</h2>
-            <SliderMovie endpoint={'top_rated'}/>
-        <h2>Upcoming</h2>
-            <SliderMovie endpoint={'upcoming'}/>
-        </>
-    );
+import { SearchBar } from "../../components/SearchBar";
+import { Banner } from "../../components/Banner";
+import Section from "../../components/Section";
+export function Home() {
+  return (
+    <>
+      <SearchBar />
+      <Banner />
+      <Section title={"Now Playing"}>
+        <SliderMovie endpoint={"now_playing"} />
+      </Section>
+      <Section title={"Popular"}>
+        <SliderMovie endpoint={"popular"} />
+      </Section>
+      <Section title={"Top Rated"}>
+        <SliderMovie endpoint={"top_rated"} />
+      </Section>
+      <Section title={"Upcoming"}>
+        <SliderMovie endpoint={"upcoming"} />
+      </Section>
+    </>
+  );
 }
