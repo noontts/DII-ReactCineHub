@@ -3,6 +3,6 @@ import './ButtonDetail.css';
 
 export function ButtonDetail({ movieID }){
     return (
-        <a href="#">Detail</a>
+        <a href="#" className="btn-detail">Detail</a>
     );
 }
