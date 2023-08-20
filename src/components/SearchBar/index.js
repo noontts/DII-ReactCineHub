@@ -3,7 +3,7 @@ import 'boxicons';
 import "./SearchBar.css";
 
 
-export function SearchBar(){
+export function SearchBar({setResults}){
       const [input , setInput] = useState("");
 
       const fetchdata = (value) => {
@@ -11,9 +11,16 @@ export function SearchBar(){
         .then((response) => response.json())
         .then((json) => {
            const results = json.filter((user) => {
-                return user && user.name && user.name.toLowerCase().includes(value.toLowerCase())
+                return (
+                    value &&
+                    user &&
+
+                 user.name && 
+                 user.name.toLowerCase().includes(value.toLowerCase())
+                 );
            });
-           console.log(results)
+           
+           setResults(results)
         })
       }
 
