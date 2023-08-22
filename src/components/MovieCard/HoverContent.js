@@ -1,10 +1,11 @@
 import React from "react";
+import { FavoriteButton } from "./FavoriteButton";
 
-export function HoverContent({ movieObject, movieGenre }) {
+export function HoverContent({ movieObject, movieGenre, addToFavorite }) {
   return (
     <div style={{ padding: "20px" }}>
       <div style={{textAlign:'right'}}>
-        <box-icon name="heart" color='white'></box-icon>
+        <FavoriteButton addToFavorite = {addToFavorite} movieObject = {movieObject}/>
       </div>
 
       <div className="title" style={{ fontSize: "20px" ,marginTop:'10px'}}>
