@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import './navbarNight.css';
+import LogoImg from '../LogoCard/Logo.png';
 
 import { BiGridAlt } from "@react-icons/all-files/bi/BiGridAlt";
 import { BiStar } from "@react-icons/all-files/bi/BiStar";
@@ -18,7 +19,8 @@ export function Navbar(){
 
     return (
             <nav class="navbarBackgroundNight"  className={light? 'navbarBackgroundLight':'navbarBackgroundNight'}> 
-                <h1 class='Logo-Name-Nav'       className={light? 'Logo-Name-Nav_Light':'Logo-Name-Nav'}>Movie</h1> 
+                <h1 class='Logo-Name-Nav'       className={light? 'Logo-Name-Nav_Light':'Logo-Name-Nav'}>Movie</h1>
+                {/* <img src={LogoImg}></img>  */}
                 <button class='DashBoard'       className={light? 'DashBoard_Light': 'DashBoard'}>  <BiGridAlt class='icon'/>  <p>DashBoard</p></button>
                 <button class='Top_50'          className={light? 'Top_50_Light': 'Top_50'}>     <BiStar class='icon'/>     <p>Top 50</p></button>
                 <button class='Favorite'        className={light? 'Favorite_Light': 'Favorite'}>   <BiHeart class='icon'/>    <p>Favorite</p></button>

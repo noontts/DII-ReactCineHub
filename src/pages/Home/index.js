@@ -19,7 +19,7 @@ export function Home() {
   };
 
     const addMovieToFavorites = (movieObj) => {
-      if (!favoriteMovie.includes(movieObj)) {
+      if (!favoriteMovie.some(movie => movie.id === movieObj.id)) {
         setFavoriteMovie((prevFavorites) => [...prevFavorites, movieObj]);
         console.log(`${movieObj.id} is Add!`);
       }
