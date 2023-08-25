@@ -6,33 +6,7 @@ import { Banner } from "../../components/Banner";
 import Section from "../../components/Section";
 
 
-export function Home() {
-
-  const [favoriteMovie,setFavoriteMovie] = useState([]);
-
-  const addToFavorites = (isFavorite, movieObj) => {
-    if (!isFavorite) {
-      removeFromFavorites(movieObj);
-    } else {
-      addMovieToFavorites(movieObj);
-    }
-  };
-
-    const addMovieToFavorites = (movieObj) => {
-      if (!favoriteMovie.some(movie => movie.id === movieObj.id)) {
-        setFavoriteMovie((prevFavorites) => [...prevFavorites, movieObj]);
-        console.log(`${movieObj.id} is Add!`);
-      }
-    };
-  
-    const removeFromFavorites = (movieObj) => {
-      setFavoriteMovie((prevFavorites) =>
-        prevFavorites.filter((favoriteMovie) => favoriteMovie.id !== movieObj.id)
-      );
-      console.log(`${movieObj.id} is Delete!`)
-    };
-
-    console.log("Updated favoriteMovie:", favoriteMovie);
+export function Home({ addToFavorites }) {
 
   return (
     <>

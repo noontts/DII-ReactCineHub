@@ -7,7 +7,7 @@ export const fetchData = async (endpoint, page = 1) => {
   const options = {
     method: "GET",
     url: `${BASE_URL}/${endpoint}`,
-    params: { language: "en-US", page: `${page}` },
+    params: { language: "en-EN", page: `${page}` },
     headers: {
       accept: "application/json",
       Authorization: `${ACCESS_TOKEN}`,
