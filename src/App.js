@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { Banner } from "./components/Banner";
 import Container from "./components/Container";
-import { Navbar } from "./components/Navbar";
-import { SearchBar } from "./components/SearchBar";
-import { SearchResultsList } from "./components/SearchBar/SearchResultsList";
-import { CommentInput } from "./components/CommentInput";
+import { Home } from "./pages/Home"
+import { Navbar } from "./components/Navbar/"
 import "./App.css";
-
-
 
 function App() {
 
@@ -15,15 +11,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
-      <div className="search-bar-container">
-          <SearchBar setResults = {setResults}/>
-          <SearchResultsList results = {results}/>
-      </div>
-      
+      <Navbar/>  
       <Banner />
-      <Container/>
-      <CommentInput />
+      <Container>
+        <Home/>
+      </Container>
     </div>
   );
 }

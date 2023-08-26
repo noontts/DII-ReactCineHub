@@ -1,7 +1,7 @@
 import React from "react";
 
 function Container({ children }){
-    return <main>{children}</main>
+    return <main style={{display:"flex",flexDirection:"column",alignItems:"center"}}>{children}</main>
 }
 
 export default Container;
