@@ -53,6 +53,11 @@
 .movie-title{
     font-size: 16px;
     text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .movie-genre{
     font-size: 10px;

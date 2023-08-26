@@ -5,7 +5,7 @@ import { MovieCard } from '../components/MovieCard'
 import { fetchData } from "../services/movieapi";
 
 
-export function SliderMovie({endpoint, page}){
+export function SliderMovie({endpoint, page, onAddToFavorite}){
     const [data , setData] = useState([]);
     
     useEffect(()=>{
@@ -30,7 +30,7 @@ export function SliderMovie({endpoint, page}){
     return(
         <Slider className="custom-slider" {...settings}>
                 {data.map((movie)=>(
-                <MovieCard key={movie.id} movieObject={movie}/>
+                <MovieCard key={movie.id} movieObject={movie} addToFavorite={onAddToFavorite}/>
             ))}
         </Slider>
     );
