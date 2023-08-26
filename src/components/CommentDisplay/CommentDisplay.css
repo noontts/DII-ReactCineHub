@@ -1,0 +1,13 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.Edit-data{
+    font-size: 32px;
+    color: #a1e533;
+}
+
+.Delete-data{
+    font-size: 32px;
+    color: #FF3a3a;
+}
