@@ -30,7 +30,15 @@ input:focus{
     SearchBar-Result
 */
 .search-result{
+    display: flex;
     padding: 10px 20px;
+}
+.search-result img {
+    height: 90px;
+    width: 70px;
+    object-fit: cover;
+    
+
 }
 .search-result:hover{
     background-color: #efefef;

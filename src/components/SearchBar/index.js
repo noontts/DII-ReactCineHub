@@ -1,33 +1,22 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
+import { searchMovie } from "../../services/movieapi";
 
 
 export function SearchBar({setResults}){
       const [input , setInput] = useState("");
 
-      const fetchdata = (value) => {
-        fetch("https:jsonplaceholder.typicode.com/users")
-        .then((response) => response.json())
-        .then((json) => {
-           const results = json.filter((user) => {
-                return (
-                    value &&
-                    user &&
-
-                 user.name && 
-                 user.name.toLowerCase().includes(value.toLowerCase())
-                 );
-           });
-           
-           setResults(results)
-        })
-      }
+      
 
       const handleChange = (value) => {
         setInput(value)
-        fetchdata(value)
+        fetchSearch(value)
       }
-       
+      
+      const fetchSearch = async(value) => {
+        const movieSearch = await searchMovie(value);
+        setResults(movieSearch.results);
+      }
         
       
     return(

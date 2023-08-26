@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Banner } from "./components/Banner";
 import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
