@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import { Navbar } from "./components/Navbar";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchBar/SearchResultsList";
+import { CommentInput } from "./components/CommentInput";
 import "./App.css";
 
 
@@ -22,6 +23,7 @@ function App() {
       
       <Banner />
       <Container/>
+      <CommentInput />
     </div>
   );
 }
