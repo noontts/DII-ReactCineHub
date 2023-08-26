@@ -6,8 +6,6 @@ import { searchMovie } from "../../services/movieapi";
 export function SearchBar({setResults}){
       const [input , setInput] = useState("");
 
-      
-
       const handleChange = (value) => {
         setInput(value)
         fetchSearch(value)

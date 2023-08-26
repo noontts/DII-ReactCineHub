@@ -4,7 +4,7 @@ import { SearchResult } from './SearchResult';
 
 export function SearchResultsList ({ results }){
 
-  const maxResult = results.slice(0,10);
+  const maxResult = results.slice(0,5);
   return (
     <div className='results-list'>
       {/* ... rest of the code */
