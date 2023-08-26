@@ -1,16 +1,21 @@
-import React,{useState} from 'react';
+import React from 'react';
 import "./SearchBar.css";
 
 
 export const SearchResult = ({result}) => {
-  const [imgPath, setImgPath] = useState("https://image.tmdb.org/t/p/original");
-
-  const imgMovie = `${imgPath}/${result.poster_path}`
+  const imgPath = "https://image.tmdb.org/t/p/original";
+  const imgMovie = `${imgPath}/${result.poster_path}`;
   
   return (
     <div className='search-result'>
+
       <img src={imgMovie}></img>
-      <p>{result.title}</p>
+      <div className="title-movie">
+        <h3>{result.title}</h3>
+        <p>{result.release_date}</p>
+      </div>
+     
+     
       </div>
   )
 }
