@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptype from 'prop-types';
 import "./SearchBar.css";
 
 
@@ -18,4 +19,9 @@ export const SearchResult = ({result}) => {
      
       </div>
   )
+
+}
+
+SearchResult.prototype = {
+  result: Proptype.object.isRequired
 }
