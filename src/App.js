@@ -7,12 +7,9 @@ import "./App.css";
 
 function App() {
 
-  const [results, setResults] = useState([]);
-
   return (
     <div className="App">
-      <Navbar/>  
-      <Banner />
+      <Navbar/>
       <Container>
         <Home/>
       </Container>

@@ -1,13 +1,20 @@
-import React from "react";
+import React,{ useState } from "react";
 import "../../assets/style/Home.css";
 import { SliderMovie } from "../../components/SliderMovie";
+import { SearchResultsList } from "../../components/SearchBar/SearchResultsList"
 import { SearchBar } from "../../components/SearchBar";
 import { Banner } from "../../components/Banner";
 import Section from "../../components/Section";
 export function Home() {
+
+  const [results, setResults] = useState([]);
+
   return (
     <>
-      <SearchBar />
+      <div className="search-bar-container">
+          <SearchBar setResults = {setResults}/>
+          <SearchResultsList results = {results}/>
+      </div>
       <Banner />
       <Section title={"Now Playing"}>
         <SliderMovie endpoint={"now_playing"} />
