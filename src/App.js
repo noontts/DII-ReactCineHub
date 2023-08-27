@@ -1,11 +1,10 @@
-import { useState } from "react";
+import React ,{ useState } from "react";
 import { Banner } from "./components/Banner";
 import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
 import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
 import { Navbar } from "./components/Navbar/"
-import React ,{ useState } from "react";
 import "./App.css";
 
 function App() {
