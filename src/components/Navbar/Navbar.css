@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   position: fixed;
+  z-index: 100;
 }
 
 
@@ -70,6 +71,7 @@
   position: fixed;
   top: 60px;
   transition: 850ms;
+  z-index: 100;
 }
 
 .nav-menu-mini {
@@ -81,6 +83,7 @@
   top: 60px;
   width: 60px;
   transition: 350ms;
+  z-index: 100;
 }
 
 .nav-text {
