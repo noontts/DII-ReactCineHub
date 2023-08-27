@@ -4,8 +4,6 @@ import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
 import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
-import { Navbar } from "./components/Navbar/"
-
 import { Navbar } from "./components/Navbar/Navbar";
 import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 
