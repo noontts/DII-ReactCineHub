@@ -20,8 +20,6 @@ import { BiLogOut } from "@react-icons/all-files/bi/BiLogOut";
 */
 
 export function Navbar(){
-
-    
     const [results,setResults] = useState([]);
     const [sidebar,setSidebar] = useState(true);
 
@@ -41,7 +39,8 @@ export function Navbar(){
                 </Link>
                 <img src={logoCinihub} className="logopic"/>
                 <div className="Searchbar-container">
-                    <SearchBar className='SearchBar'/>
+                    <SearchBar className='SearchBar' setResults={setResults}/>
+                    <SearchResultsList results={results}/>
                 </div>
 
             </div>
