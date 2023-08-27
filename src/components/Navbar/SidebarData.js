@@ -10,7 +10,7 @@ export const SidebarData = [
 
     },
     {
-        title: 'Top-50',
+        title: 'Top 50',
         path: '/Top-50',
         icon:  <BiIcons.BiSolidStar class='icon'/>,
         cName:'nav-text'
@@ -27,7 +27,7 @@ export const SidebarData = [
         title: 'Logout',
         path: '/Logout',
         icon: <BiIcons.BiSolidLogOut class='icon'/>,
-        cName:'nav-text'
+        cName:'nav-text-logout'
 
     },
 ]
