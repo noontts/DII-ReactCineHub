@@ -7,6 +7,7 @@ import { Home } from "./pages/Home"
 import { Favorite } from  "./pages/FavoritePage"
 import { Navbar } from "./components/Navbar/Navbar";
 import {Routes, Route} from 'react-router-dom';
+import MovieDetail from './pages/MovieDetail'
 
 import "./App.css";
 
@@ -47,7 +48,7 @@ function App() {
           <Route path="/popular" />
           <Route path="/Top-rate" />
           <Route path="/upcoming" />
-          <Route path="/movie:id" />
+          <Route path="/movie/:id" element={<MovieDetail/>} />
           <Route path="/Top-50" />
           <Route path="/Favorite" />
           <Route path="/Logout" />
