@@ -4,13 +4,13 @@ import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
 import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
+import { Favorite } from  "./pages/FavoritePage"
 import { Navbar } from "./components/Navbar/Navbar";
-import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 import "./App.css";
 
 function App() {
-
   const [favoriteMovie,setFavoriteMovie] = useState([]);
 
   const addToFavorites = (isFavorite, movieObj) => {
@@ -39,15 +39,21 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <>
-          <Navbar />
-          <Switch>
-            <Route path='/'/>
-          </Switch>
-        </>
-      </Router>
-      <Container/>
+      <Navbar/>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/now-playing" /> 
+          <Route path="/popular" />
+          <Route path="/Top-rate" />
+          <Route path="/upcoming" />
+          <Route path="/movie:id" />
+          <Route path="/Top-50" />
+          <Route path="/Favorite" />
+          <Route path="/Logout" />
+          <Route path="*" />
+        </Routes>
+      </Container>
     </div>
   );
 }

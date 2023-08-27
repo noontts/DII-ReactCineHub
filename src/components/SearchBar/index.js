@@ -34,7 +34,7 @@ export function SearchBar({setResults}){
         <>
         <div className="input-wrapper"> 
         
-        <box-icon name='search-alt-2' size="lg" color="black"></box-icon> 
+        <box-icon name='search-alt-2' size="sm" color="black"></box-icon> 
             <input  placeholder="Search for movie here" 
                     value={input} 
                     onChange={ (e) => handleChange(e.target.value)}>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
+import { SearchBar } from '../SearchBar';
+import { SearchResultsList} from '../SearchBar/SearchResultsList'
+import logoCinihub  from '../LogoCard/CinihubLogo.png';
 
 
 import './Navbar.css'
@@ -18,7 +21,9 @@ import { BiLogOut } from "@react-icons/all-files/bi/BiLogOut";
 
 export function Navbar(){
 
-    const [sidebar,setSidebar] = useState(true)
+    
+    const [results,setResults] = useState([]);
+    const [sidebar,setSidebar] = useState(true);
 
     const miniSidebar = () => setSidebar(!sidebar)
 
@@ -34,6 +39,11 @@ export function Navbar(){
                 <Link to='#' className="manu-bar">
                     <BiIcons.BiMenu onClick={miniSidebar} className='icon-toggle'/> 
                 </Link>
+                <img src={logoCinihub} className="logopic"/>
+                <div className="Searchbar-container">
+                    <SearchBar className='SearchBar'/>
+                </div>
+
             </div>
             <nav className={sidebar ? 'nav-menu-default' : 'nav-menu-mini span-hidden'}>
                 <ul className="nav-menu-items">
@@ -44,7 +54,7 @@ export function Navbar(){
                         <li key={index} className={item.cName}>
                             <Link to={item.path}>
                                 {item.icon}
-                                <span>{item.title}</span>
+                                <span className="navtext">{item.title}</span>
                             </Link>
                         </li>
                     )

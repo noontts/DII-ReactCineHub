@@ -9,7 +9,7 @@
     font-weight: 700;
 }
 
-a:hover{
+.btn-detail a:hover{
     background-color: #FFFFFF;
     color: #A1E533;
 }

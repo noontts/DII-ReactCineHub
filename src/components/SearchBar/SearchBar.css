@@ -2,8 +2,8 @@
     SearchBarMain
 */
 .input-wrapper{
-    height: 70px;
-    min-width: 909px;
+    height: 40px;
+    min-width: 500px;
     border-radius: 40px;
     border: 1px solid #000;
     background: #FFF;
@@ -18,7 +18,7 @@ input {
     border: none;
     height: 100%;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 12px;
     margin-left: 5px;
 }
 input:focus{
