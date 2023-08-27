@@ -3,9 +3,11 @@ import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
 import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
+import { MovieDetail } from "./pages/MovieDetail";
 import { Navbar } from "./components/Navbar/"
 import React ,{ useState } from "react";
 import "./App.css";
+import { CommentInput } from "./components/CommentInput";
 
 function App() {
 
@@ -39,9 +41,11 @@ function App() {
     <div className="App">
       <Navbar/>
       <Container>
-        <Home addToFavorite={addToFavorites}/>
+        <MovieDetail></MovieDetail>
+        {/* <Home addToFavorite={addToFavorites}/> */}
         {/* <PaginatePage pageTitle={'Now Playing'} addToFavorite={addToFavorites}/> */}
         {/* <FavoritePage favoriteMovies={ favoriteMovie }/> */}
+
       </Container>
     </div>
   );
