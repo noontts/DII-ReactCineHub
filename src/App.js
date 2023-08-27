@@ -5,6 +5,10 @@ import PaginatePage from "./pages/PaginateMovie"
 import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
 import { Navbar } from "./components/Navbar/"
+
+import { Navbar } from "./components/Navbar/Navbar";
+import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
+
 import "./App.css";
 
 function App() {
@@ -37,12 +41,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
-      <Container>
-        <Home addToFavorite={addToFavorites}/>
-        {/* <PaginatePage pageTitle={'Now Playing'} addToFavorite={addToFavorites}/> */}
-        {/* <FavoritePage favoriteMovies={ favoriteMovie }/> */}
-      </Container>
+      <Router>
+        <>
+          <Navbar />
+          <Switch>
+            <Route path='/'/>
+          </Switch>
+        </>
+      </Router>
+      <Container/>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 
 
 .navbarBackgroundNight {
-    width: 265px;
+    width: 220px;
+    height: 1268px;
     flex-shrink: 0;
     background: #000000;
     color: #FFF;
@@ -22,8 +23,8 @@
   }
 
   .icon{
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
     
 
@@ -38,7 +39,7 @@
 
   .DashBoard{
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -62,7 +63,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -78,7 +79,7 @@
 
   .Top_50{
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -102,7 +103,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -118,7 +119,7 @@
 
   .Favorite{
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -142,7 +143,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -158,7 +159,7 @@
 
   .LightMode{
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -182,7 +183,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -198,7 +199,7 @@
 
   .Logout{
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -222,7 +223,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -241,7 +242,7 @@
     background: #FFF;
     color: #211F1F;
 
-    width: 265px;
+    width: 220px;
     height: 1268px;
     flex-shrink: 0;
     box-shadow: 0px 4.528800010681152px 3.623039960861206px 0px rgba(0, 0, 0, 0.02), 0px 12.521552085876465px 10.017241477966309px 0px rgba(0, 0, 0, 0.04), 0px 30.14707374572754px 24.117658615112305px 0px rgba(0, 0, 0, 0.05), 0px 100px 80px 0px rgba(0, 0, 0, 0.07);
@@ -268,7 +269,7 @@
     color: #211F1F;
 
     display: flex;
-    width: 227px;
+    width: 200px;
     height: 53px;
     flex-shrink: 0;
 
@@ -290,7 +291,7 @@
     justify-content: center;
     flex-shrink: 0;
 
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -309,7 +310,7 @@
       color: #211F1F;
 
       display: flex;
-      width: 227px;
+      width: 200px;
       height: 53px;
       flex-shrink: 0;
 
@@ -331,7 +332,7 @@
       justify-content: center;
       flex-shrink: 0;
   
-      font-size: 24px;
+      font-size: 22px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -350,7 +351,7 @@
       color: #211F1F;
 
       display: flex;
-      width: 227px;
+      width: 200px;
       height: 53px;
       flex-shrink: 0;
 
@@ -372,7 +373,7 @@
       justify-content: center;
       flex-shrink: 0;
   
-      font-size: 24px;
+      font-size: 22px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -413,7 +414,7 @@
       justify-content: center;
       flex-shrink: 0;
   
-      font-size: 24px;
+      font-size: 22px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -426,7 +427,7 @@
       color: #FF3A3A;
 
       display: flex;
-      width: 227px;
+      width: 200px;
       height: 53px;
       flex-shrink: 0;
 
@@ -448,7 +449,7 @@
       justify-content: center;
       flex-shrink: 0;
   
-      font-size: 24px;
+      font-size: 22px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
