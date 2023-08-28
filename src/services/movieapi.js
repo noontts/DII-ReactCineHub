@@ -49,7 +49,7 @@ export const searchMovie = async (keyword) => {
 export const getMovieDetail = async (movie_id) => {
   const options = {
     method: "GET",
-    url: `${BASE_URL / movie_id}`,
+    url: `${BASE_URL}/${movie_id}`,
     params: { language: "en-US" },
     headers: {
       accept: "application/json",
