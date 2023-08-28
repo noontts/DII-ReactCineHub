@@ -30,7 +30,21 @@ input:focus{
     SearchBar-Result
 */
 .search-result{
+    display: flex;
     padding: 10px 20px;
+}
+.search-result img {
+    height: 100px;
+    width: 80px;
+    object-fit: cover;
+}
+.title-movie {
+   width: 100%;
+    margin-left: 20px;
+}
+.title-movie p {
+    font-weight: lighter;
+    color: #5f5e5e;
 }
 .search-result:hover{
     background-color: #efefef;

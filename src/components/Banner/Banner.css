@@ -19,7 +19,7 @@ p {
 .right-content{
     height: 300px;
 }
-img{
+.right-content img{
     height: 100%;
     border-radius: 20px;
     border: 1px solid #000;

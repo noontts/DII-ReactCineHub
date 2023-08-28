@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import {Routes, Route} from 'react-router-dom';
 
 import "./App.css";
+import { CommentInput } from "./components/CommentInput";
 
 function App() {
   const [favoriteMovie,setFavoriteMovie] = useState([]);
