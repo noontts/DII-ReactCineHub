@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import { SearchBar } from '../SearchBar';
-import { SearchResultsList} from '../SearchBar/SearchResultsList'
+import SearchBar  from '../SearchBar';
+import SearchResultsList from '../SearchBar/SearchResultsList'
 import logoCinihub  from '../LogoCard/CinihubLogo.png';
 
 
