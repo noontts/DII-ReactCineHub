@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 
 
 
-const SearchResult = ({result,className,setInput}) => {
+const SearchResult = ({result,className}) => {
   const imgPath = "https://image.tmdb.org/t/p/original";
   const imgMovie = `${imgPath}/${result.poster_path}`;
 
   
   return (
-    <Link className={className} to={`/movie/${result.id}`} onClick={setInput("")}>
+    <Link className={className} to={`/movie/${result.id}`}>
 
       <img src={imgMovie}></img>
       <div className="title-movie">
