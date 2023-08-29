@@ -50,7 +50,7 @@ export function MovieCard({ movieObject , addToFavorite}){
                 <div className="movie-title" style={{marginTop:'5px'}}> {movieObject.title} </div>
                 <div className="movie-genre">{movieGenre}</div>
                 <div style={{textAlign: 'center',marginTop : '12px',display: "flex", justifyContent: 'center'}}>
-                    <ButtonDetail/>
+                    <ButtonDetail movieID={movieObject.id}/>
                 </div>
             </div>
         </div>

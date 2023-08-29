@@ -5,13 +5,13 @@ import { MovieCard } from '../components/MovieCard'
 import { fetchData } from "../services/movieapi";
 
 
-export function SliderMovie({endpoint, page, onAddToFavorite}){
+export function SliderMovie({endpoint, page, onAddToFavorite ,movieID}){
     const [data , setData] = useState([]);
     
     useEffect(()=>{
         const fetchDataFromApi = async() =>{
             try {
-                const result = await fetchData(endpoint, page);
+                const result = await fetchData(endpoint, page ,movieID);
                 setData(result.results);
               } catch (error) {
                 console.error('Error fetching data:', error);

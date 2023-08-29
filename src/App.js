@@ -1,12 +1,11 @@
 import React ,{ useState } from "react";
-import { Banner } from "./components/Banner";
 import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
-import { FavoritePage } from "./pages/FavoritePage"
 import { Home } from "./pages/Home"
-import { Favorite } from  "./pages/FavoritePage"
 import { Navbar } from "./components/Navbar/Navbar";
 import {Routes, Route} from 'react-router-dom';
+import MovieDetail from './pages/MovieDetail'
+import ScrollToTop from './components/ScrollToTop'
 
 import "./App.css";
 import { CommentInput } from "./components/CommentInput";
@@ -41,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
+      <ScrollToTop />
       <Container>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -48,7 +48,7 @@ function App() {
           <Route path="/popular" />
           <Route path="/Top-rate" />
           <Route path="/upcoming" />
-          <Route path="/movie:id" />
+          <Route path="/movie/:id" element={<MovieDetail/>} />
           <Route path="/Top-50" />
           <Route path="/Favorite" />
           <Route path="/Logout" />

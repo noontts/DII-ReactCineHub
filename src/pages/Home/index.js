@@ -4,7 +4,7 @@ import "../../assets/style/Home.css";
 import { SliderMovie } from "../../components/SliderMovie";
 import { SearchResultsList } from "../../components/SearchBar/SearchResultsList"
 import { SearchBar } from "../../components/SearchBar";
-import { Banner } from "../../components/Banner";
+import Banner from "../../components/Banner";
 import Section from "../../components/Section";
 
 export function Home({ addToFavorites }) {
