@@ -11,7 +11,7 @@ function getGenreNameById(genreId) {
     return genre ? genre.name : "Unknown Genre";
 }
 
-export function MovieCard({ movieObject , addToFavorite}){
+export function MovieCard({ movieObject}){
     const [imgPath, setImgPath] = useState("https://image.tmdb.org/t/p/original");
 
     let movieGenre = (
@@ -35,7 +35,7 @@ export function MovieCard({ movieObject , addToFavorite}){
         <div className="movie-card">
             <div className="movie-cover-img" style={{backgroundImage:`url('${imgPath}${movieObject.poster_path}')`}}>
                 <div className="img-hover-content">
-                    <HoverContent movieObject={movieObject} movieGenre={movieGenre} addToFavorite={addToFavorite}/>
+                    <HoverContent movieObject={movieObject} movieGenre={movieGenre}/>
                 </div>
             </div>
 

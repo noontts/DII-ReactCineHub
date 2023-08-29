@@ -6,9 +6,8 @@ import { Navbar } from "./components/Navbar/Navbar";
 import {Routes, Route} from 'react-router-dom';
 import MovieDetail from './pages/MovieDetail'
 import ScrollToTop from './components/ScrollToTop'
-
+import { FavoritesProvider } from "./components/FavoritesContext";
 import "./App.css";
-import { CommentInput } from "./components/CommentInput";
 
 function App() {
   const [favoriteMovie,setFavoriteMovie] = useState([]);
@@ -41,6 +40,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <ScrollToTop />
+      <FavoritesProvider>
       <Container>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -55,6 +55,7 @@ function App() {
           <Route path="*" />
         </Routes>
       </Container>
+      </FavoritesProvider>
     </div>
   );
 }

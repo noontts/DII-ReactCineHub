@@ -1,7 +1,11 @@
 import React from "react";
 import { FavoriteButton } from "./FavoriteButton";
+import { useFavorites } from "../../components/FavoritesContext";
 
-export function HoverContent({ movieObject, movieGenre, addToFavorite }) {
+
+export function HoverContent({ movieObject, movieGenre}) {
+
+  const { addToFavorites } = useFavorites();
 
   const titleStyle = {
     display: '-webkit-box',
@@ -17,7 +21,7 @@ export function HoverContent({ movieObject, movieGenre, addToFavorite }) {
     
     <div style={{ padding: "20px" }}>
       <div style={{textAlign:'right'}}>
-        <FavoriteButton addToFavorite = {addToFavorite} movieObject = {movieObject}/>
+        <FavoriteButton movieObject = {movieObject} addToFavorites={addToFavorites}/>
       </div>
 
       <div className="title" style={titleStyle}>
