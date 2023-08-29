@@ -3,10 +3,14 @@ import axios from "axios";
 const BASE_URL = "https://api.themoviedb.org/3/movie";
 const ACCESS_TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDJiNWQzNjRjY2MzMmQ5ODRjM2Q4NTI5MGU2ZGZjOSIsInN1YiI6IjY0Y2Y4OWMwNmQ0Yzk3MDEwZDUwZjA2MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qm1Hv-FSpnaTxldJLTyCVurnBePOyv3cgci5taDUjKk";
 
-export const fetchData = async (endpoint, page = 1) => {
+
+export const fetchData = async (endpoint, page = 1, movieId) => {
+  let URL = `${BASE_URL}/${endpoint}`;
+  if(endpoint === 'recommend') URL = `${BASE_URL}/${movieId}/recommendations`;
+
   const options = {
     method: "GET",
-    url: `${BASE_URL}/${endpoint}`,
+    url: `${URL}`,
     params: { language: "en-EN", page: `${page}` },
     headers: {
       accept: "application/json",
