@@ -122,6 +122,12 @@ export default styled(MovieDetailCard)`
     color: #000;
     padding: 5px 10px 5px 10px;
     margin-right: 5px;
+    font-size: 14px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      2px 3px 7px 0px rgba(0, 0, 0, 0.2), 6px 10px 12px 0px rgba(0, 0, 0, 0.17),
+      14px 23px 16px 0px rgba(0, 0, 0, 0.1),
+      24px 42px 19px 0px rgba(0, 0, 0, 0.03),
+      38px 65px 21px 0px rgba(0, 0, 0, 0);
   }
   .head-average {
     font-size: 16px;
