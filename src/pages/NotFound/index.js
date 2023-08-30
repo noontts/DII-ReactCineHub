@@ -19,7 +19,7 @@ export default function NotFound({className}){
                         <td className='PLeft'>
                             <h1 className='mainPassage'>Page Not Found...</h1>
                             <p className='error_passage'>You can go back to Homepage</p>
-                            <Link className='linkbutton'><BiIcons.BiLeftArrowAlt className='iconbutton'/>Homepage</Link>
+                            <Link className='linkbutton'><BiIcons.BiLeftArrowAlt className='iconbutton'/>Back to Homepage</Link>
                         </td>
                         <td className='PRight'>
                             <h1 className='f0f'> 4 <div className='zero'> 0 </div> 4 </h1>
