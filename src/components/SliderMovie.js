@@ -41,7 +41,7 @@ export default styled(SliderMovie)`
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";
 
-width: 1170px;
+width: 1300px;
 margin-left: 50px;
 
 .slick-list{

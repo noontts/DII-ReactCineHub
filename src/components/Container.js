@@ -11,7 +11,6 @@ function Container({ children, className }) {
 
 export default styled(Container)`
   margin: 0 auto 0;
-  max-width: 1450px;
   padding: 5em 0;
   main{
     display: flex;

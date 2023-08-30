@@ -71,7 +71,6 @@ export const MovieDetailCard = ({ movieID, className }) => {
 };
 
 export default styled(MovieDetailCard)`
-  width: 100%;
   height: 600px;
   background-color: white;
   background-size: cover;
