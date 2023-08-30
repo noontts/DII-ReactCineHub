@@ -37,29 +37,32 @@ export function Navbar(){
                 <Link to='#' className="manu-bar">
                     <BiIcons.BiMenu onClick={miniSidebar} className='icon-toggle'/> 
                 </Link>
-                <img src={logoCinihub} className="logopic"/>
+                <img src={ logoCinihub } alt='Logo' className="logopic"/>
                 <div className="Searchbar-container">
                     <SearchBar className='SearchBar' setResults={setResults}/>
                     <SearchResultsList results={results}/>
                 </div>
-
             </div>
-            <nav className={sidebar ? 'nav-menu-default' : 'nav-menu-mini span-hidden'}>
-                <ul className="nav-menu-items">
-                    <li className="navbar-toggle"></li>
-                
-                {SidebarData.map((item,index) => {
-                    return(
-                        <li key={index} className={item.cName}>
-                            <Link to={item.path}>
-                                {item.icon}
-                                <span className="navtext">{item.title}</span>
-                            </Link>
-                        </li>
-                    )
-                })}
-                </ul>
-            </nav>
+
+
+            <div className="sidebar_container">
+                <nav className={sidebar ? 'nav-menu-default' : 'nav-menu-mini span-hidden'}>
+                    <ul className="nav-menu-items">
+                        <li className="navbar-toggle"></li>
+                    
+                    {SidebarData.map((item,index) => {
+                        return(
+                            <li key={index} className={item.cName}>
+                                <Link to={item.path}>
+                                    {item.icon}
+                                    <span className="navtext">{item.title}</span>
+                                </Link>
+                            </li>
+                        )
+                    })}
+                    </ul>
+                </nav>
+            </div>    
         </>
         
     )
