@@ -68,3 +68,23 @@ export const getMovieDetail = async (movie_id) => {
     throw error;
   }
 };
+
+
+export const getMovieImages = async(movie_id) =>{
+  const options = {
+    method: 'GET',
+    url: `${BASE_URL}/${movie_id}/images`,
+    params: {include_image_language: 'null'},
+    headers: {
+      accept: 'application/json',
+      Authorization: `${ACCESS_TOKEN}`
+    }
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

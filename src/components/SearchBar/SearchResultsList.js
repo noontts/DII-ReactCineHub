@@ -19,7 +19,7 @@ function SearchResultsList ({ results , className}){
 }
 
 SearchResultsList.propTypes = {
-  results : PropTypes.object.isRequired
+  results : PropTypes.array.isRequired
 }
 
 export default styled(SearchResultsList)`

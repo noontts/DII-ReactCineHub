@@ -64,18 +64,6 @@ export function Navbar(){
         
     )
 
-
-/*
-    return (
-            <div class="navbarBackgroundNight"  className={light? 'navbarBackgroundLight':'navbarBackgroundNight'}> 
-                <h1 class='Logo-Name-Nav'       className={light? 'Logo-Name-Nav_Light':'Logo-Name-Nav'}>Movie</h1> 
-                <button class='DashBoard'       className={light? 'DashBoard_Light': 'DashBoard'}>  <BiIcons.BiSolidGridAlt class='icon'/>  <p>DashBoard</p></button>
-                <button class='Top_50'          className={light? 'Top_50_Light': 'Top_50'}>     <BiIcons.BiSolidStar class='icon'/>     <p>Top 50</p></button>
-                <button class='Favorite'        className={light? 'Favorite_Light': 'Favorite'}>   <BiIcons.BiSolidHeart class='icon'/>    <p>Favorite</p></button>
-                <button onClick={lightMode}     class='LightMode' className={light? 'LightMode_Light': 'LightMode'}> <BiIcons.BiSolidSun class='icon'/>      <p>Light Mode</p></button>
-                <button class='Logout'          className={light? 'Logout_Light': 'Logout'}>     <BiIcons.BiSolidLogOut class='icon'/>   <p>Logout</p></button>
-            </div>
-    );*/
 }
 
 export default Navbar;

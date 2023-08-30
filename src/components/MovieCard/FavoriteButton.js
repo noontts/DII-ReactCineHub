@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './FavoriteButton.css'
 
-export const FavoriteButton = ({addToFavorite, movieObject}) => {
+export const FavoriteButton = ({addToFavorites, movieObject}) => {
 
     const [isFavorite, setIsFavorite] = useState(false);
 
@@ -9,8 +9,9 @@ export const FavoriteButton = ({addToFavorite, movieObject}) => {
       const updatedFavoriteStatus = !isFavorite;
       console.log("Update: " + updatedFavoriteStatus);
       setIsFavorite(updatedFavoriteStatus);
-    
-      addToFavorite(updatedFavoriteStatus, movieObject);
+  
+      // Call the addToFavorites function passed from the parent component
+      addToFavorites(updatedFavoriteStatus, movieObject);
     };
     
     return (

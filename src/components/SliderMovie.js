@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../assets/style/Slider.css"
 import Slider from "react-slick";
-import { MovieCard } from '../components/MovieCard'
+import styled from "styled-components";
+import MovieCard from '../components/MovieCard'
 import { fetchData } from "../services/movieapi";
 
 
-export function SliderMovie({endpoint, page, onAddToFavorite ,movieID}){
+function SliderMovie({endpoint, page, movieID , className}){
     const [data , setData] = useState([]);
     
     useEffect(()=>{
@@ -28,10 +28,26 @@ export function SliderMovie({endpoint, page, onAddToFavorite ,movieID}){
     };
 
     return(
-        <Slider className="custom-slider" {...settings}>
+        <Slider className={className} {...settings}>
                 {data.map((movie)=>(
-                <MovieCard key={movie.id} movieObject={movie} addToFavorite={onAddToFavorite}/>
+                <MovieCard key={movie.id} movieObject={movie}/>
             ))}
         </Slider>
     );
 }
+
+export default styled(SliderMovie)`
+
+@import "slick-carousel/slick/slick.css"; 
+@import "slick-carousel/slick/slick-theme.css";
+
+width: 1170px;
+margin-left: 50px;
+
+.slick-list{
+    height: 550px;
+}
+.slick-prev, .slick-next{
+    top: 45%;
+}
+`;

@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Section from "../../components/Section"
-import { getMovieDetail } from "../../services/movieapi";
 import MovieDetailCard from "../../components/MovieDetailCard";
-import { SliderMovie } from "../../components/SliderMovie";
+import SliderMovie from "../../components/SliderMovie";
+import SliderImg from "../../components/SliderImg";
 
 const MovieDetail = () => {
-  const [data, setData] = useState({});
   const movieId = useParams();
   
   return (
     <>
       <MovieDetailCard movieID={movieId.id}/>
+
+      <Section title={'Gallery'}>
+        <SliderImg movieID={movieId.id}/>
+      </Section>
+
       <Section title={'Recommended'}>
         <SliderMovie endpoint={'recommend'} movieID={movieId.id}/>
       </Section>

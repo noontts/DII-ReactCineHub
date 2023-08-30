@@ -1,9 +1,6 @@
-
-import React, { useState }from "react";
+import React from "react";
 import "../../assets/style/Home.css";
-import { SliderMovie } from "../../components/SliderMovie";
-import { SearchResultsList } from "../../components/SearchBar/SearchResultsList"
-import { SearchBar } from "../../components/SearchBar";
+import SliderMovie from "../../components/SliderMovie";
 import Banner from "../../components/Banner";
 import Section from "../../components/Section";
 
@@ -13,16 +10,16 @@ export function Home({ addToFavorites }) {
     <>
       <Banner />
       <Section title={"Now Playing"}>
-        <SliderMovie endpoint={"now_playing"} onAddToFavorite={addToFavorites}/>
+        <SliderMovie endpoint={"now_playing"}/>
       </Section>
       <Section title={"Popular"}>
-        <SliderMovie endpoint={"popular"} onAddToFavorite={addToFavorites}/>
+        <SliderMovie endpoint={"popular"}/>
       </Section>
       <Section title={"Top Rated"}>
-        <SliderMovie endpoint={"top_rated"} onAddToFavorite={addToFavorites}/>
+        <SliderMovie endpoint={"top_rated"}/>
       </Section>
       <Section title={"Upcoming"}>
-        <SliderMovie endpoint={"upcoming"} onAddToFavorite={addToFavorites}/>
+        <SliderMovie endpoint={"upcoming"}/>
       </Section>
     </>
   );

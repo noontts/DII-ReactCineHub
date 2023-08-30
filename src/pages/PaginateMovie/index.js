@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { MovieCard } from '../../components/MovieCard'
+import MovieCard from '../../components/MovieCard'
 import { fetchData } from '../../services/movieapi'
 
-const PaginatePage = ({ pageTitle , addToFavorite}) => {
+const PaginatePage = ({ pageTitle }) => {
     const [data, setData] = useState([]);
     useEffect(()=>{
         
@@ -24,7 +24,7 @@ const PaginatePage = ({ pageTitle , addToFavorite}) => {
         <h1 style={{color: 'white'}}>{pageTitle}</h1>
         <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
             {data.map((movieObject)=>(
-                <MovieCard key={movieObject.id} movieObject={movieObject} addToFavorite={addToFavorite}></MovieCard>
+                <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
             ))}
         </div>
     </>
