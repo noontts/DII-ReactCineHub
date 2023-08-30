@@ -1,4 +1,4 @@
-import React ,{ useState } from "react";
+import React ,{ useContext, useState } from "react";
 import Container from "./components/Container";
 import PaginatePage from "./pages/PaginateMovie"
 import { Home } from "./pages/Home"
@@ -8,33 +8,9 @@ import MovieDetail from './pages/MovieDetail'
 import ScrollToTop from './components/ScrollToTop'
 import { FavoritesProvider } from "./components/FavoritesContext";
 import "./App.css";
+import { FavoritePage } from "./pages/FavoritePage";
 
 function App() {
-  const [favoriteMovie,setFavoriteMovie] = useState([]);
-
-  const addToFavorites = (isFavorite, movieObj) => {
-    if (!isFavorite) {
-      removeFromFavorites(movieObj);
-    } else {
-      addMovieToFavorites(movieObj);
-    }
-  };
-
-    const addMovieToFavorites = (movieObj) => {
-      if (!favoriteMovie.some(movie => movie.id === movieObj.id)) {
-        setFavoriteMovie((prevFavorites) => [...prevFavorites, movieObj]);
-        console.log(`${movieObj.id} is Add!`);
-      }
-    };
-  
-    const removeFromFavorites = (movieObj) => {
-      setFavoriteMovie((prevFavorites) =>
-        prevFavorites.filter((favoriteMovie) => favoriteMovie.id !== movieObj.id)
-      );
-      console.log(`${movieObj.id} is Delete!`)
-    };
-
-    console.log("Updated favoriteMovie:", favoriteMovie);
 
   return (
     <div className="App">
@@ -50,7 +26,7 @@ function App() {
           <Route path="/upcoming" />
           <Route path="/movie/:id" element={<MovieDetail/>} />
           <Route path="/Top-50" />
-          <Route path="/Favorite" />
+          <Route path="/Favorite" element={<FavoritePage/>}/>
           <Route path="/Logout" />
           <Route path="*" />
         </Routes>

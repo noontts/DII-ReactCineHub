@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getMovieDetail } from "../../services/movieapi";
-import genreData from "../../assets/data/genre.json"
+import MovieDetailLoad from "./MovieDetailLoad";
 import styled from "styled-components";
 
 export const MovieDetailCard = ({ movieID, className }) => {
   const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const imgPath = "https://image.tmdb.org/t/p/original";
   let movieGenre = <p>No genres available</p>;
 
@@ -13,11 +14,12 @@ export const MovieDetailCard = ({ movieID, className }) => {
       try {
         const result = await getMovieDetail(movieID);
         setData(result);
-        console.log(result);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+    setIsLoading(true);
     fetchDataFromApi();
   }, [movieID]);
 
@@ -26,23 +28,25 @@ export const MovieDetailCard = ({ movieID, className }) => {
 
   if (data.genres && data.genres.length > 0) {
     movieGenre = data.genres.map((genre, index) => (
-      <span className="span-genres" key={index}>{genre.name}</span>
+      <span className="span-genres" key={index}>
+        {genre.name}
+      </span>
     ));
   }
 
-  if (Object.keys(data).length === 0 && data.constructor === Object) {
-    return <div className={className}>
-        <h1>Loading....</h1>
-      </div>
+  if (isLoading) {
+    return (
+      <MovieDetailLoad/>
+    );
   }
 
   return (
     <div className={className}>
       <div className="back-drop">
-        <img src={imgBackDropPath} />
+        <img src={imgBackDropPath} alt="back-drop"/>
       </div>
       <div className="img-poster">
-        <img src={imgPosterPath} />
+        <img src={imgPosterPath} alt="poster"/>
       </div>
       <div className="detail">
         <div className="title-movie">
@@ -111,11 +115,11 @@ export default styled(MovieDetailCard)`
   .title-movie {
     font-size: 35px;
   }
-  .genres-container{
+  .genres-container {
     margin-top: 20px;
   }
-  .span-genres{
-    background-color: #D9D9D9;
+  .span-genres {
+    background-color: #d9d9d9;
     width: 50px;
     height: 16px;
     border-radius: 15px;

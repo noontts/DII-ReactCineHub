@@ -1,12 +1,23 @@
 import React from 'react'
-import { MovieCard } from '../../components/MovieCard'
+import MovieCard from '../../components/MovieCard'
+import { useFavorites } from "../../components/FavoritesContext";
+import Section from "../../components/Section"
+export const FavoritePage = () => {
+  
+  const { favoriteMovie } = useFavorites();
 
-export const FavoritePage = ({ favoriteMovies, addToFavorite}) => {
+
+  if(favoriteMovie.length === 0){
+    return <div>Not Have</div>
+  }
+
   return (
-    <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
-            {favoriteMovies.map((movieObject)=>(
-                <MovieCard key={movieObject.id} movieObject={movieObject} addToFavorite={addToFavorite}></MovieCard>
-            ))}
-    </div>
+    <Section title={'Favorite Movies'}>
+      <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly',width:'100%'}}>
+              {favoriteMovie.map((movieObject)=>(
+                  <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
+              ))}
+      </div>
+    </Section>
   )
 }

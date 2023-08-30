@@ -28,7 +28,7 @@ const SearchResult = ({result,className}) => {
 
 
 SearchResult.prototype = {
-  result: Proptype.object.isRequired
+  result: Proptype.array.isRequired
 }
 
 

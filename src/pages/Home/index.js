@@ -1,9 +1,6 @@
-
-import React, { useState }from "react";
+import React from "react";
 import "../../assets/style/Home.css";
-import { SliderMovie } from "../../components/SliderMovie";
-import { SearchResultsList } from "../../components/SearchBar/SearchResultsList"
-import { SearchBar } from "../../components/SearchBar";
+import SliderMovie from "../../components/SliderMovie";
 import Banner from "../../components/Banner";
 import Section from "../../components/Section";
 
