@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { getMovieImages } from '../services/movieapi';
 import '../assets/style/Slider.css';
 
-export const SliderImg = ({ movieID, className }) => {
+export const SliderImg = ({ movieID, className, setIsHaveImg }) => {
   const [images, setImages] = useState([]);
   const websitePath = 'https://image.tmdb.org/t/p/original';
 
@@ -29,8 +29,9 @@ export const SliderImg = ({ movieID, className }) => {
   }, [movieID]);
 
 
-  if(images.length == 0){
-    return <div>No Images</div>
+  if(images.length <= 2){
+    setIsHaveImg(false);
+    return <div></div>
   }
   return (
     <Slider className={className} {...settings} >
