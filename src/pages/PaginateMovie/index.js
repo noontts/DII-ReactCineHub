@@ -33,7 +33,7 @@ const PaginatePage = ({ pageTitle, endpoint }) => {
   return (
     <>
         <h1 style={{color: 'white'}}>{pageTitle}</h1>
-        <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
+        <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly',alignContent:'flex-start'}}>
             {data.map((movieObject)=>(
                 <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
             ))}
