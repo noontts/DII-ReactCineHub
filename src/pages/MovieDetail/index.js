@@ -9,17 +9,16 @@ import { CommentDisplay } from "../../components/CommentDisplay"
 
 const MovieDetail = () => {
   const movieId = useParams();
-  const [isHaveImg, setIsHaveImg] = useState(false);
-  
+  // const [isHaveImg, setIsHaveImg] = useState(true);
+
   return (
     <>
       <MovieDetailCard movieID={movieId.id}/>
 
-      {!isHaveImg &&
+      {/* {isHaveImg ?? */}
         <Section title={'Gallery'}>
-          <SliderImg movieID={movieId.id} setIsHaveImg={setIsHaveImg} />
+          <SliderImg movieID={movieId.id} />
         </Section>
-      }
       
       <Section title={'Recommended'}>
         <SliderMovie endpoint={'recommend'} movieID={movieId.id}/>

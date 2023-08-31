@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../../components/MovieCard'
 import { fetchData } from '../../services/movieapi'
-import { useLocation, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const PaginatePage = ({ pageTitle, endpoint }) => {
     const [data, setData] = useState([]);
@@ -33,7 +33,7 @@ const PaginatePage = ({ pageTitle, endpoint }) => {
   return (
     <>
         <h1 style={{color: 'white'}}>{pageTitle}</h1>
-        <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly',alignContent:'flex-start'}}>
+        <div style={{display: 'grid' , gridTemplateColumns: 'auto auto auto auto auto',columnGap: '35px'}}>
             {data.map((movieObject)=>(
                 <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
             ))}

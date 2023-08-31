@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { getMovieImages } from '../services/movieapi';
 import '../assets/style/Slider.css';
 
-export const SliderImg = ({ movieID, className, setIsHaveImg }) => {
+export const SliderImg = ({ movieID, className }) => {
   const [images, setImages] = useState([]);
   const websitePath = 'https://image.tmdb.org/t/p/original';
 
@@ -25,14 +25,16 @@ export const SliderImg = ({ movieID, className, setIsHaveImg }) => {
         console.error('Error fetching data:', error);
       }
     };
+    
     fetchDataFromApi();
   }, [movieID]);
 
 
   if(images.length <= 2){
-    setIsHaveImg(false);
+    // setIsHaveImg(false);
     return <div></div>
   }
+
   return (
     <Slider className={className} {...settings} >
       {images.map((image, index) => (
