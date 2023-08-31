@@ -18,7 +18,7 @@ function SliderMovie({endpoint, page, movieID , className}){
               }
         }
         fetchDataFromApi();
-    },[endpoint, page]);
+    },[endpoint, page,movieID]);
 
     const settings = {
         infinite: true,

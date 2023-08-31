@@ -9,6 +9,7 @@ import { FavoritesProvider } from "./components/FavoritesContext";
 import "./App.css";
 import { FavoritePage } from "./pages/FavoritePage";
 import NotFound from './pages/NotFound'
+import PaginatePage from "./pages/PaginateMovie";
 
 function App() {
 
@@ -20,12 +21,12 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/now-playing" /> 
-          <Route path="/popular" />
-          <Route path="/Top-rate" />
-          <Route path="/upcoming" />
+          <Route path="/now-playing/:pageNumber" element={<PaginatePage pageTitle={'now-playing'} endpoint={'now_playing'}/>}/> 
+          <Route path="/popular/:pageNumber" element={<PaginatePage pageTitle={'popular'} endpoint={'popular'}/>}/>
+          <Route path="/top-rate/:pageNumber" element={<PaginatePage pageTitle={'top-rate'} endpoint={'top_rated'}/>}/>
+          <Route path="/upcoming/:pageNumber" element={<PaginatePage pageTitle={'upcoming'} endpoint={'upcoming'}/>}/>
           <Route path="/movie/:id" element={<MovieDetail/>} />
-          <Route path="/Top-50" />
+          <Route path="/top-50/:pageNumber" element={<PaginatePage pageTitle={'top-50'} endpoint={'now_playing'}/>} />
           <Route path="/Favorite" element={<FavoritePage/>}/>
           <Route path="/Logout" />
           <Route path="*" element={<NotFound/>}/>
