@@ -9,10 +9,12 @@ import ScrollToTop from './components/ScrollToTop'
 import { FavoritesProvider } from "./components/FavoritesContext";
 import "./App.css";
 import { FavoritePage } from "./pages/FavoritePage";
+import Footer from "./components/Footer";
 
 function App() {
 
   return (
+    <>
     <div className="App">
       <Navbar/>
       <ScrollToTop />
@@ -33,6 +35,8 @@ function App() {
       </Container>
       </FavoritesProvider>
     </div>
+  <Footer />
+  </>
   );
 }
 

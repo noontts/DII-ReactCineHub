@@ -20,6 +20,8 @@ const MovieDetail = () => {
       <Section title={'Recommended'}>
         <SliderMovie endpoint={'recommend'} movieID={movieId.id}/>
       </Section>
+
+      
     </>
   );
 };
