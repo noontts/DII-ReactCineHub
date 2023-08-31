@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import SearchResult  from './SearchResult';
 import styled from 'styled-components';
 
-function SearchResultsList ({ results , className}){
+function SearchResultsList ({ results , className, setResults}){
 
   const maxResult = results.slice(0,5);
   return (
     <div className={className}>
       {/* ... rest of the code */
          maxResult.map((results)=> {
-          return <SearchResult result={results} key={results.id}/>
+          return <SearchResult result={results} key={results.id} setResults={setResults}/>
         })
       
       }

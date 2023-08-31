@@ -5,6 +5,7 @@ import Section from "../../components/Section"
 import MovieDetailCard from "../../components/MovieDetailCard";
 import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
+import CommentInput from "../../components/CommentInput";
 
 const MovieDetail = () => {
   const movieId = useParams();
@@ -20,8 +21,9 @@ const MovieDetail = () => {
       <Section title={'Recommended'}>
         <SliderMovie endpoint={'recommend'} movieID={movieId.id}/>
       </Section>
+      <CommentInput />
 
-      
+
     </>
   );
 };

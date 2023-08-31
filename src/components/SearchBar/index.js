@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { searchMovie } from "../../services/movieapi";
 import styled from 'styled-components';
 
@@ -21,7 +21,8 @@ function SearchBar({setResults , className}){
         <>
         <div className={className}> 
         <box-icon name='search-alt-2' size="sm" color="black"></box-icon> 
-            <input  placeholder="Search for movie here...." 
+            <input  placeholder="Search for movie here...."
+                    id="searchbar" 
                     value={input} 
                     onChange={ (e) => handleChange(e.target.value)}
                     >
