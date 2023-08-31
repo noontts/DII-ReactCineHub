@@ -1,6 +1,5 @@
-import React ,{ useContext, useState } from "react";
+import React from "react";
 import Container from "./components/Container";
-import PaginatePage from "./pages/PaginateMovie"
 import { Home } from "./pages/Home"
 import { Navbar } from "./components/Navbar/Navbar";
 import {Routes, Route} from 'react-router-dom';
@@ -9,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop'
 import { FavoritesProvider } from "./components/FavoritesContext";
 import "./App.css";
 import { FavoritePage } from "./pages/FavoritePage";
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
           <Route path="/Top-50" />
           <Route path="/Favorite" element={<FavoritePage/>}/>
           <Route path="/Logout" />
-          <Route path="*" />
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </Container>
       </FavoritesProvider>

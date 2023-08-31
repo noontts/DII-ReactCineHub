@@ -4,7 +4,7 @@ import SliderMovie from "../../components/SliderMovie";
 import Banner from "../../components/Banner";
 import Section from "../../components/Section";
 
-export function Home({ addToFavorites }) {
+export function Home() {
 
   return (
     <>
