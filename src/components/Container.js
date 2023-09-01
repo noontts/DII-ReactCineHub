@@ -12,7 +12,7 @@ function Container({ children, className }) {
 export default styled(Container)`
   margin: 0 auto 0;
   padding: 5em 0;
-  main{
+  main {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -5,19 +5,10 @@ import SearchBar  from '../SearchBar';
 import SearchResultsList from '../SearchBar/SearchResultsList'
 import logoCinihub  from '../LogoCard/CinihubLogo.png';
 
-
 import './Navbar.css'
-//import './navbarNight.css';
 
 import * as BiIcons from 'react-icons/bi';
 
-/*
-import { BiGridAlt } from "@react-icons/all-files/bi/BiGridAlt";
-import { BiStar } from "@react-icons/all-files/bi/BiStar";
-import { BiHeart } from "@react-icons/all-files/bi/BiHeart";
-import { BiSun } from "@react-icons/all-files/bi/BiSun";
-import { BiLogOut } from "@react-icons/all-files/bi/BiLogOut";
-*/
 
 export function Navbar(){
     const [results,setResults] = useState([]);
@@ -25,12 +16,6 @@ export function Navbar(){
 
     const miniSidebar = () => setSidebar(!sidebar)
 
-    /*
-    const [light,setLight] = useState(false); // Set ค่า LightMode เป็น False
-    const lightMode = () => { // ถ้า กดปุ่ม  LightMode จะ ทำงาน
-        setLight(!light); // Set ค่า ตรงข้ามจากเดิม
-      };*/
-    
     return(
         <>
             <div className="navbar">

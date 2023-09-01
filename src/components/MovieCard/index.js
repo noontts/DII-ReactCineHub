@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import genreData from "../../assets/data/genre.json";
+import ButtonDetail from "./ButtonDetail";
 import { MovieYear } from "./MovieYear";
-import { ButtonDetail } from "./ButtonDetail";
 import { HoverContent } from "./HoverContent";
 
 function getGenreNameById(genreId) {
@@ -16,21 +16,19 @@ function MovieCard({ movieObject, className }) {
 
   let movieGenre = (
     <>
-      {movieObject.genre_ids === undefined ? (
-        movieObject.genres.map((genre, index) => (
-          <React.Fragment key={index}>
-            {index !== 0 && ", "}
-            <span>{genre.name}</span>
-          </React.Fragment>
-        ))
-      ) : (
-        movieObject.genre_ids.map((genreId, index) => (
-          <React.Fragment key={genreId}>
-            {index !== 0 && ", "}
-            <span>{getGenreNameById(genreId)}</span>
-          </React.Fragment>
-        ))
-      )}
+      {movieObject.genre_ids === undefined
+        ? movieObject.genres.map((genre, index) => (
+            <React.Fragment key={index}>
+              {index !== 0 && ", "}
+              <span>{genre.name}</span>
+            </React.Fragment>
+          ))
+        : movieObject.genre_ids.map((genreId, index) => (
+            <React.Fragment key={genreId}>
+              {index !== 0 && ", "}
+              <span>{getGenreNameById(genreId)}</span>
+            </React.Fragment>
+          ))}
     </>
   );
 
@@ -68,16 +66,7 @@ function MovieCard({ movieObject, className }) {
           {movieObject.title}{" "}
         </div>
         <div className="movie-genre">{movieGenre}</div>
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "12px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <ButtonDetail movieID={movieObject.id} />
-        </div>
+        <ButtonDetail movieID={movieObject.id} />
       </div>
     </div>
   );
@@ -89,19 +78,19 @@ MovieCard.propTypes = {
 };
 
 export default styled(MovieCard)`
-    margin-top: 15px;
-    width: 222px;
-    height: 500px;
-    font-family: "Poppins", sans-serif;
-    color: #ffffff;
-    background-color: #211f1f;
-    border-radius: 15px;
-    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.2))
-      drop-shadow(1px 2px 5px rgba(0, 0, 0, 0.2))
-      drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.17))
-      drop-shadow(10px 17px 12px rgba(0, 0, 0, 0.1))
-      drop-shadow(17px 30px 14px rgba(0, 0, 0, 0.03))
-      drop-shadow(27px 46px 15px rgba(0, 0, 0, 0));
+  margin-top: 15px;
+  width: 222px;
+  height: 500px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  background-color: #211f1f;
+  border-radius: 15px;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.2))
+    drop-shadow(1px 2px 5px rgba(0, 0, 0, 0.2))
+    drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.17))
+    drop-shadow(10px 17px 12px rgba(0, 0, 0, 0.1))
+    drop-shadow(17px 30px 14px rgba(0, 0, 0, 0.03))
+    drop-shadow(27px 46px 15px rgba(0, 0, 0, 0));
 
   .movie-cover-img {
     width: 100%;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export function HoverContent({ movieObject, movieGenre}) {
 
@@ -42,3 +43,8 @@ export function HoverContent({ movieObject, movieGenre}) {
     </div>
   );
 }
+
+HoverContent.propTypes = {
+  movieObject: PropTypes.object.isRequired,
+  movieGenre: PropTypes.object.isRequired
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const MovieDetailLoad = ({ className }) => {
   return (
@@ -18,3 +19,7 @@ export default styled(MovieDetailLoad)`
   background-color: black;
   color: white;
 `;
+
+MovieDetailLoad.propTypes = {
+  className : PropTypes.string
+}

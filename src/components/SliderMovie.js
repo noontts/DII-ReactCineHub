@@ -1,53 +1,54 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import MovieCard from '../components/MovieCard'
+import MovieCard from "../components/MovieCard";
 import { fetchData } from "../services/movieapi";
 
 
-function SliderMovie({endpoint, page, movieID , className}){
-    const [data , setData] = useState([]);
-    
-    useEffect(()=>{
-        const fetchDataFromApi = async() =>{
-            try {
-                const result = await fetchData(endpoint, page ,movieID);
-                setData(result.results);
-              } catch (error) {
-                console.error('Error fetching data:', error);
-              }
-        }
-        fetchDataFromApi();
-    },[endpoint, page,movieID]);
+function SliderMovie({ endpoint, page, movieID, className }) {
+  const [data, setData] = useState([]);
 
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 5
+  useEffect(() => {
+    const fetchDataFromApi = async () => {
+      try {
+        const result = await fetchData(endpoint, page, movieID);
+        setData(result.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+    fetchDataFromApi();
+  }, [endpoint, page, movieID]);
 
-    return(
-        <Slider className={className} {...settings}>
-                {data.map((movie)=>(
-                <MovieCard key={movie.id} movieObject={movie}/>
-            ))}
-        </Slider>
-    );
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 4
+  };
+
+  return (
+    <Slider className={className} {...settings}>
+      {data.map((movie) => (
+        <MovieCard key={movie.id} movieObject={movie} />
+      ))}
+    </Slider>
+  );
 }
 
 export default styled(SliderMovie)`
+  @import "slick-carousel/slick/slick.css";
+  @import "slick-carousel/slick/slick-theme.css";
 
-@import "slick-carousel/slick/slick.css"; 
-@import "slick-carousel/slick/slick-theme.css";
+  width: 1150px;
+  margin-left: 50px;
 
-width: 1150px;
-margin-left: 50px;
-
-.slick-list{
+  .slick-list {
     height: 550px;
-}
-.slick-prev, .slick-next{
+  }
+  .slick-prev,
+  .slick-next {
     top: 45%;
-}
+  }
 `;

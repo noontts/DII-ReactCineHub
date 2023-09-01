@@ -1,16 +1,16 @@
 import React from "react";
-import Container from "./components/Container";
+import { Routes, Route } from 'react-router-dom';
 import { Home } from "./pages/Home"
 import { Navbar } from "./components/Navbar/Navbar";
-import {Routes, Route} from 'react-router-dom';
-import MovieDetail from './pages/MovieDetail'
-import ScrollToTop from './components/ScrollToTop'
 import { FavoritesProvider } from "./components/FavoritesContext";
-import "./App.css";
 import { FavoritePage } from "./pages/FavoritePage";
+import ScrollToTop from './components/ScrollToTop'
+import Container from "./components/Container";
+import MovieDetail from './pages/MovieDetail'
 import NotFound from './pages/NotFound'
 import PaginatePage from "./pages/PaginateMovie";
 import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
 

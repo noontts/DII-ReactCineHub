@@ -1,5 +1,4 @@
 import  React from 'react';
-
 import styled from 'styled-components'
 
 export const CommentDisplay = ({comment, className}) => {
@@ -27,12 +26,7 @@ export default styled(CommentDisplay)`
 width : 1150px;
 margin-top : 5%;
 
-*{
-    font-family: 'Poppins', sans-serif;
-}
-
 .comment-containner{
-
     width: 100%;
     height: 100%;
     margin-left: 5%;

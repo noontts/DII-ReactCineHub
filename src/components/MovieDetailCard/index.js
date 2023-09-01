@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { getMovieDetail } from "../../services/movieapi";
 import { useFavorites } from "../FavoritesContext";
 import MovieDetailLoad from "./MovieDetailLoad";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const MovieDetailCard = ({ movieID, className }) => {
-  const { favoriteMovie,addToFavorites, removeFromFavorites} = useFavorites();
+  const { favoriteMovie, addToFavorites, removeFromFavorites } = useFavorites();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -13,7 +14,9 @@ export const MovieDetailCard = ({ movieID, className }) => {
   let movieGenre = <p>No genres available</p>;
 
   useEffect(() => {
-    const isMovieInFavorites = favoriteMovie.some((movie) => movie.id === data.id);
+    const isMovieInFavorites = favoriteMovie.some(
+      (movie) => movie.id === data.id
+    );
     setIsFavorite(isMovieInFavorites);
     const fetchDataFromApi = async () => {
       try {
@@ -26,7 +29,7 @@ export const MovieDetailCard = ({ movieID, className }) => {
     };
     setIsLoading(true);
     fetchDataFromApi();
-  }, [movieID,favoriteMovie,data.id]);
+  }, [movieID, favoriteMovie, data.id]);
 
   const imgPosterPath = `${imgPath}/${data.poster_path}`;
   const imgBackDropPath = `${imgPath}/${data.backdrop_path}`;
@@ -39,7 +42,6 @@ export const MovieDetailCard = ({ movieID, className }) => {
     ));
   }
 
-  
   const handleToggleFavorite = () => {
     if (isFavorite) {
       // Movie is in favorites, remove it
@@ -51,28 +53,31 @@ export const MovieDetailCard = ({ movieID, className }) => {
   };
 
   if (isLoading) {
-    return (
-      <MovieDetailLoad/>
-    );
+    return <MovieDetailLoad />;
   }
 
   return (
     <div className={className}>
       <div className="back-drop">
-        <img src={imgBackDropPath} alt="back-drop"/>
+        <img src={imgBackDropPath} alt="back-drop" />
       </div>
       <div className="img-poster">
-        <img src={imgPosterPath} alt="poster"/>
+        <img src={imgPosterPath} alt="poster" />
       </div>
       <div className="detail">
         <div className="title-movie">
           {data.title}({data.release_date.split("-")[0]})
           <button onClick={handleToggleFavorite} className="bookmark">
-            {isFavorite 
-            ? 
-            <box-icon name='bookmark' type='solid' color='#f2b01e' size='md'/> 
-            :
-            <box-icon name='bookmark' color='#f2b01e' size='md'/>}
+            {isFavorite ? (
+              <box-icon
+                name="bookmark"
+                type="solid"
+                color="#f2b01e"
+                size="md"
+              />
+            ) : (
+              <box-icon name="bookmark" color="#f2b01e" size="md" />
+            )}
           </button>
         </div>
         <div className="genres-container">{movieGenre}</div>
@@ -91,6 +96,11 @@ export const MovieDetailCard = ({ movieID, className }) => {
       </div>
     </div>
   );
+};
+
+MovieDetailCard.propTypes = {
+  movieID: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default styled(MovieDetailCard)`
@@ -137,7 +147,7 @@ export default styled(MovieDetailCard)`
   .title-movie {
     font-size: 35px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
   .genres-container {
     margin-top: 20px;
@@ -176,12 +186,12 @@ export default styled(MovieDetailCard)`
     margin-top: 35px;
   }
 
-  .bookmark{
+  .bookmark {
     margin-top: 10px;
     margin-left: 20px;
     border: none;
     background: none;
     padding: 0;
-    cursor: pointer; 
+    cursor: pointer;
   }
 `;
