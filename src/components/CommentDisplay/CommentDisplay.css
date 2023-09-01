@@ -3,29 +3,61 @@
 }
 
 .comment-containner{
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: #211f1f;
+
+    margin-left: 5%;
+}
+
+.user_data{
+    
 }
 
 .user-name{
     font-weight: bold;
-    color:#FFF
+    font-size: 20px;
+    color:#FFF;
+
+    margin-bottom: -10px;
 }
 
 .comment-text{
     font-weight: lighter;
-    color:#FFF
+    font-size: 18px;
+    color:#FFF;
+
 }
 
 .Edit-data{
-    font-size: 20px;
+    font-size: 16px;
     color: #a1e533;
+    width: 80px;
+    border: none;
     background-color: #211f1f;
+    border-radius: 5px;
+    transition: 300ms
+}
+
+.Edit-data:hover{
+    color: #FFFF;
+    background-color: #a1e533;
+    transition: 300ms;
 }
 
 .Delete-data{
-    font-size: 20px;
+    font-size: 16px;
     color: #FF3a3a;
+    width: 80px;
+    border: none;
     background-color: #211f1f;
+    border-radius: 5px;
+    transition: 300ms
+}
+
+.Delete-data:hover{
+    color: #FFFF;
+    background-color: #FF3a3a;
+    transition: 300ms
+
 }
