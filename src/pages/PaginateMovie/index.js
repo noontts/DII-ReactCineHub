@@ -38,7 +38,7 @@ const PaginatePage = ({ pageTitle, endpoint }) => {
                 <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
             ))}
         </div>
-        <button onClick={handleNextPage}>Next Page</button>
+        <button onClick={handleNextPage} style={{marginTop:'10%' , fontSize:'20px' , width:' 200px' , borderRadius:'12px' , cursor:'pointer'}}>Next Page</button>
     </>
   )
 }
