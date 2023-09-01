@@ -1,36 +1,58 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { styled } from 'styled-components'
+import { updateComment } from '../../services/commentsapi';
 
+export function EditComment({ commentText,className , movie_id , comment_id , onSave, onCancel }) {
+  // State to store the edited comment text
+  const [editedComment, setEditedComment] = useState(commentText);
 
+  // Function to handle the comment text change during editing
+  const handleCommentChange = (event) => {
+    setEditedComment(event.target.value);
+  };
 
+  // Function to save the edited comment
+  const saveEditedComment = async () => {
+    await updateComment(movie_id, comment_id, editedComment);
+    onSave(editedComment); // Notify the parent component
+  };
 
-export function EditComment() {
+  // Function to cancel editing
+  const cancelEditing = () => {
+    onCancel();
+  };
+
   return (
-
+    <div className={className}>
     <div className='editContainer'>
-        <h1 className='header_edit'>Edit</h1>
-        <p className='user_data'></p>
-        <input type="text" className='new_Data'/>
+      <h1 className='header_edit'>Edit</h1>
+      <textarea
+        type="text"
+        className='new_Data'
+        value={editedComment}
+        onChange={handleCommentChange}
+      />
 
-        <div className='Button-container'>
-            <button className='Cancel'>Cancel</button>
-            <button className='Save'>Save</button>
-        </div>
+      <div className='Button-container'>
+        <button className='Save' onClick={saveEditedComment}>Save</button>
+        <button className='Cancel' onClick={cancelEditing}>Cancel</button>
+      </div>
     </div>
-
-  )
+  </div>
+  );
 }
 
 
 export default styled(EditComment)`
 
-    opacity: 0.3;
+    left: 0%;
 
     .editContainer{
         width: 50%;
         height: 50%;
-        position: absolute;
-        margin: auto auto;
+
+        background-color: #7adada;
+        z-index: 1000;
 
         opacity: 1;
     }
@@ -45,8 +67,16 @@ export default styled(EditComment)`
     }
 
     .new_Data{
+        resize: none;
         font-size: 16px;
-        
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #0000;
+        height: 120px;
+        width: 1200px;
+        border-radius: 7px;
+        font-size: 17px;
+        resize: none;
     }
 
 
