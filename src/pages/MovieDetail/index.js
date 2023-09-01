@@ -49,7 +49,6 @@ const MovieDetail = () => {
 
       <CommentInput />
       {commentDisplay}
-      <CommentDisplay/>
     </>
   );
 };
