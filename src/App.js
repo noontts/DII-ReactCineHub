@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound'
 import PaginatePage from "./pages/PaginateMovie";
 import Footer from "./components/Footer";
 
+
 function App() {
 
   return (
