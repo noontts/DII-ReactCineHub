@@ -5,31 +5,37 @@ import Section from "../../components/Section";
 import MovieDetailCard from "../../components/MovieDetailCard";
 import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
-import CommentDisplay from "../../components/CommentDisplay"
+import CommentDisplay from "../../components/CommentDisplay";
 import CommentInput from "../../components/CommentInput";
 import { fetchComment } from "../../services/commentsapi";
 
 const MovieDetail = () => {
-  const movieIdParams = useParams();
-  const [comment, setComment] = useState([]);
   let commentDisplay;
+  const movieIdParams = useParams();
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const fetchCommentData = async () => {
       try {
-        const result = await fetchComment(movieIdParams.id); // Use movieIdParams.id directly
+        const result = await fetchComment(movieIdParams.id);
         console.log(result.comments);
-        setComment(result.comments);
+        setComments(result.comments);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setComment([]);
+        setComments([]);
       }
     };
     fetchCommentData();
   }, [movieIdParams.id]);
 
-  if (comment.length > 0) {
-    commentDisplay = comment.map((commentData, index) => (
+  const handleNewComment = (newCommentData) => {
+    // Update the comments state with the new comment
+    setComments([...comments, newCommentData]);
+  };
+
+  if (comments.length > 0) {
+
+    commentDisplay = comments.map((commentData, index) => (
       <CommentDisplay key={index} comment={commentData} />
     ));
   }
@@ -38,7 +44,6 @@ const MovieDetail = () => {
     <>
       <MovieDetailCard movieID={movieIdParams.id} />
 
-      {/* {isHaveImg ?? */}
       <Section title={"Gallery"}>
         <SliderImg movieID={movieIdParams.id} />
       </Section>
@@ -47,7 +52,7 @@ const MovieDetail = () => {
         <SliderMovie endpoint={"recommend"} movieID={movieIdParams.id} />
       </Section>
 
-      <CommentInput />
+      <CommentInput movie_id={movieIdParams.id} onNewComment={handleNewComment} />
       {commentDisplay}
     </>
   );

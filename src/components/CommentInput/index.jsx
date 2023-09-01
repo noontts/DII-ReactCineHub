@@ -1,21 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CommentInput.css";
 import styled from "styled-components";
-export const CommentInput = ({ className }) => {
+import { newComment } from "../../services/commentsapi";
+export const CommentInput = ({ className, movie_id, onNewComment }) => {
+  const [comments, setComments] = useState("");
+  
+
+  const handleInputChange = (e) => {
+    setComments(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Post the comment and get the new comment data
+      const newCommentData = await newComment(`${movie_id}`, comments)
+      
+      // Call the onNewComment callback to update the comments in the parent component
+      onNewComment(newCommentData);
+
+      // Clear the input field
+      setComments("");
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  };
+
+ 
+
   return (
     <>
       <div className={className}>
         <div className="Comment">
           <h1>Comment</h1>
-          <textarea />
-          <button type='submit'>POST</button>
+          <form onSubmit={handleSubmit}>
+            <textarea
+              value={comments}
+              onChange={handleInputChange}
+            />
+            <button type="submit">POST</button>
+          </form>
         </div>
       </div>
     </>
   );
 };
 export default styled(CommentInput)`
-  .Comment {
+  .Comment form{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -51,10 +82,8 @@ export default styled(CommentInput)`
     box-shadow: 0px 5px 0px 0px #c1f4d2;
   }
   .Comment button:active {
-  transform: translateY(5px);
-  color: black;
- 
-  box-shadow: 0px 0px 0px 0px #c1f4d2;
-}
-
+    transform: translateY(5px);
+    color: black;
+    box-shadow: 0px 0px 0px 0px #c1f4d2;
+  }
 `
