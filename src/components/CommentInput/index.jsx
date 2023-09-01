@@ -29,10 +29,12 @@ export default styled(CommentInput)`
 
   .Comment textarea{
     margin-top: 10px;
+    padding: 10px;
     border: 1px solid #0000;
     height: 120px;
-    width: 1250px;
+    width: 1200px;
     border-radius: 7px;
+    font-size: 17px;
   }
   .Comment button{
     margin-top: 20px;
@@ -51,6 +53,7 @@ export default styled(CommentInput)`
   .Comment button:active {
   transform: translateY(5px);
   color: black;
+ 
   box-shadow: 0px 0px 0px 0px #c1f4d2;
 }
 
