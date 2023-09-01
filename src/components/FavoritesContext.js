@@ -29,7 +29,7 @@ export const FavoritesProvider = ({ children }) => {
 
   console.log(favoriteMovie);
   return (
-    <FavoritesContext.Provider value={{ favoriteMovie, addToFavorites }}>
+    <FavoritesContext.Provider value={{ favoriteMovie, addToFavorites, removeFromFavorites }}>
       {children}
     </FavoritesContext.Provider>
   );

@@ -16,12 +16,21 @@ function MovieCard({ movieObject, className }) {
 
   let movieGenre = (
     <>
-      {movieObject.genre_ids.map((genreId, index) => (
-        <React.Fragment key={genreId}>
-          {index !== 0 && ", "}
-          <span>{getGenreNameById(genreId)}</span>
-        </React.Fragment>
-      ))}
+      {movieObject.genre_ids === undefined ? (
+        movieObject.genres.map((genre, index) => (
+          <React.Fragment key={index}>
+            {index !== 0 && ", "}
+            <span>{genre.name}</span>
+          </React.Fragment>
+        ))
+      ) : (
+        movieObject.genre_ids.map((genreId, index) => (
+          <React.Fragment key={genreId}>
+            {index !== 0 && ", "}
+            <span>{getGenreNameById(genreId)}</span>
+          </React.Fragment>
+        ))
+      )}
     </>
   );
 
