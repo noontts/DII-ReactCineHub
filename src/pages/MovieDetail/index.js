@@ -5,7 +5,7 @@ import Section from "../../components/Section"
 import MovieDetailCard from "../../components/MovieDetailCard";
 import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
-import { CommentDisplay } from "../../components/CommentDisplay"
+import CommentDisplay from "../../components/CommentDisplay"
 import CommentInput from "../../components/CommentInput";
 
 const MovieDetail = () => {
@@ -25,10 +25,8 @@ const MovieDetail = () => {
         <SliderMovie endpoint={'recommend'} movieID={movieId.id}/>
       </Section>
 
-      <CommentDisplay/>
       <CommentInput />
-
-
+      <CommentDisplay/>
     </>
   );
 };

@@ -17,6 +17,8 @@ function App() {
   return (
     <>
     <div className="App">
+      
+    <div style={{display : 'flex'}}>
       <Navbar/>
       <ScrollToTop />
       <FavoritesProvider>
@@ -35,8 +37,10 @@ function App() {
         </Routes>
       </Container>
       </FavoritesProvider>
+      </div>
+      <Footer />
     </div>
-  <Footer />
+  
   </>
   );
 }

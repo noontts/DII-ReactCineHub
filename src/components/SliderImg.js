@@ -52,7 +52,7 @@ export default styled(SliderImg)`
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";
 
-width: 1300px;
+width: 1150px;
 margin-left: 50px;
 margin-top: 20px;
 

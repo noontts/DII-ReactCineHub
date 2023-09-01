@@ -24,7 +24,7 @@ function SliderMovie({endpoint, page, movieID , className}){
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 4
+        slidesToScroll: 5
     };
 
     return(
@@ -41,7 +41,7 @@ export default styled(SliderMovie)`
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";
 
-width: 1300px;
+width: 1150px;
 margin-left: 50px;
 
 .slick-list{
