@@ -54,12 +54,19 @@ export default styled(EditComment)`
         width: 100%;
         height: 50%;
 
-        background-color: #D9D9D9;
+        background-color: #211f1f;
         z-index: 1000;
 
         border-radius: 12px;
+        border: 3px solid #FFF;
+        transition: 300ms;
 
         opacity: 1;
+    }
+
+    .editContainer:hover{
+        border: 3px solid #a1e533;
+        transition: 300ms;
     }
 
     .Data_container{
@@ -71,6 +78,8 @@ export default styled(EditComment)`
     .header_edit{
         font-size: 28px;
         font-weight: bold;
+        color: #FFF;
+        text-shadow: 4px 4px 4px rgba(81, 219, 50, 0.5);
     }
 
     .user_data{
@@ -89,7 +98,8 @@ export default styled(EditComment)`
         font-size: 17px;
         resize: none;
 
-        background-color: #FFF;
+        background-color: #D9d9d9;
+        box-shadow: 5px 10px 10px;
     }
 
 .Button-container{
@@ -132,7 +142,7 @@ export default styled(EditComment)`
     text-shadow: 2px 2px 1px rgba(255, 122, 122, 0.25);
     width: 100px;
     border: none;
-    background-color: #FFFF;
+    background-color: #211f1f;
     border-radius: 5px;
     border: solid 1px #FF3a3a;
     z-index: 1001;
