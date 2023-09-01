@@ -27,9 +27,10 @@ export default styled(SearchResultsList)`
     background-color: #fff;
     border-top: none;
     border-radius: 0 0 4px 4px;
+
     width: 520px;
     padding: 0;
-    margin-top: 55px;
+    margin-top: 45px;
     z-index: 1;
     position: absolute;
 &:focus{
