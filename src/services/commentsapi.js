@@ -3,7 +3,7 @@ import axios from "axios";
 const COMMENTS_URL = "http://localhost:9000/comments";
 
 
-const createNewMovie = async (movie_id) => {
+export const createNewMovie = async (movie_id) => {
   try {
     const newMovieData = {
       movie_id: `${movie_id}`,

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import imgrobot from '../LogoCard/robot logo.png';
 
 
+
 export const Footer = ({className}) => {
     
   return (
@@ -14,17 +15,18 @@ export const Footer = ({className}) => {
                     </div>
                     
                     <ul>
-                        <li><box-icon type='logo' name='github' color="white" size="md"></box-icon></li>
-                        <li><box-icon type='logo' name='facebook-circle' color="white" size="md"></box-icon></li>
-                        <li><box-icon name='instagram-alt' type='logo'color="white" size="md"></box-icon></li>
-                        <li><box-icon name='envelope' type='solid' color="white" size="md"></box-icon></li>
+                        
+                        <a href="https://github.com/noontts/DII-ReactCineHub" target='_blank' rel="noreferrer"><li><box-icon type='logo' name='github' color="white" size="md"></box-icon></li></a>
+                        <a href="https://www.facebook.com/nuddanai.klaiklin.1/" target="_blank" rel="noreferrer"><li><box-icon type='logo' name='facebook-circle' color="white" size="md"></box-icon></li></a> 
+                        <a href="https://www.instagram.com/potterpurpp/" target='_blank' rel="noreferrer"><li><box-icon name='instagram-alt' type='logo'color="white" size="md"></box-icon></li></a>
+                        <a href="https://www.youtube.com/channel/UCjIFqYlR4-pwDH2WEPXaK3w" target='_blank' rel="noreferrer"><li><box-icon type='logo' name='youtube' color="white" size="md"></box-icon></li></a>
                     </ul>
 
                     
                 </div>
                 
             <div className="copyright">
-                        <p>Copyright@ 2023 designed by Potter</p>
+                        <p>Copyright@ 2023 designed by CINEHUB</p>
                     </div>
      
         

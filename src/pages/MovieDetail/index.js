@@ -18,7 +18,6 @@ const MovieDetail = () => {
     const fetchCommentData = async () => {
       try {
         const result = await fetchComment(movieIdParams.id);
-        console.log(result.comments);
         setComments(result.comments);
       } catch (error) {
         console.error("Error fetching data:", error);

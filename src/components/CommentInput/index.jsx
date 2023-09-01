@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./CommentInput.css";
 import styled from "styled-components";
 import { newComment } from "../../services/commentsapi";
 export const CommentInput = ({ className, movie_id, onNewComment }) => {
@@ -26,7 +25,7 @@ export const CommentInput = ({ className, movie_id, onNewComment }) => {
     }
   };
 
- 
+  
 
   return (
     <>

@@ -4,7 +4,9 @@ import axios from 'axios';
 
 
 const Banner = ({className}) => {
-
+    const imgPath = "https://image.tmdb.org/t/p/original";
+ 
+   
   return (
     <>
         <div className={className}>
