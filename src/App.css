@@ -3,6 +3,27 @@
     font-family: 'Poppins', sans-serif; 
     margin: 0;
     padding: 0;
+
+    ::-webkit-scrollbar {
+        height: 30px;
+    }
+
+    ::-webkit-scrollbar-track{
+        background:#000;
+        border: 1px solid 211f1f;
+        border-radius: 50px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background-color: #a1e533;
+        border-radius: 50px;
+        transition: 0.25s;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+        background-color: #2ecf26;
+        border-radius: 50px;
+        transition: 0.1s;
+    }
 }
 
 .App {
