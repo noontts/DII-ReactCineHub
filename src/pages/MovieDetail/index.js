@@ -6,6 +6,7 @@ import MovieDetailCard from "../../components/MovieDetailCard";
 import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
 import { CommentDisplay } from "../../components/CommentDisplay"
+import CommentInput from "../../components/CommentInput";
 
 const MovieDetail = () => {
   const movieId = useParams();
@@ -25,6 +26,9 @@ const MovieDetail = () => {
       </Section>
 
       <CommentDisplay/>
+      <CommentInput />
+
+
     </>
   );
 };

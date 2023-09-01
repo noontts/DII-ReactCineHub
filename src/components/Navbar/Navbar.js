@@ -40,7 +40,7 @@ export function Navbar(){
                 <img src={ logoCinihub } alt='Logo' className="logopic"/>
                 <div className="Searchbar-container">
                     <SearchBar className='SearchBar' setResults={setResults}/>
-                    <SearchResultsList results={results}/>
+                    <SearchResultsList results={results} setResults={setResults}/>
                 </div>
             </div>
 

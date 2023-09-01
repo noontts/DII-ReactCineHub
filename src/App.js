@@ -10,10 +10,12 @@ import "./App.css";
 import { FavoritePage } from "./pages/FavoritePage";
 import NotFound from './pages/NotFound'
 import PaginatePage from "./pages/PaginateMovie";
+import Footer from "./components/Footer";
 
 function App() {
 
   return (
+    <>
     <div className="App">
       <Navbar/>
       <ScrollToTop />
@@ -34,6 +36,8 @@ function App() {
       </Container>
       </FavoritesProvider>
     </div>
+  <Footer />
+  </>
   );
 }
 
