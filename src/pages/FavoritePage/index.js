@@ -13,7 +13,7 @@ export const FavoritePage = () => {
 
   return (
     <Section title={'Favorite Movies'}>
-      <div style={{display: 'flex',flexWrap:'wrap',justifyContent:'space-evenly',width:'100%'}}>
+      <div style={{display: 'grid' , gridTemplateColumns: 'auto auto auto auto auto',columnGap: '35px'}}>
               {favoriteMovie.map((movieObject)=>(
                   <MovieCard key={movieObject.id} movieObject={movieObject}></MovieCard>
               ))}
