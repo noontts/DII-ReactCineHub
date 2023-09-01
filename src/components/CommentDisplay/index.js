@@ -3,27 +3,31 @@ import styled from 'styled-components'
 import EditComment  from './EditComment';
 
 
-export const CommentDisplay = ({ comment, className , movie_id , comment_id , onDelete}) => {
-    // State to manage whether the comment is being edited
+export const CommentDisplay = ({ comment, className , movie_id , comment_id , onDelete}) => { 
+
     const [isEditing, setIsEditing] = useState(false);
     const [editedComment, setEditedComment] = useState(comment.comment);
   
-    // Function to handle the "Edit" button click
-    const handleEditClick = () => {
+    
+    const handleEditClick = () => { // function เข้า สู่โหลดแก้ไขข้อความ
       setIsEditing(true);
     };
 
-    const handleDeleteClick = async () => {
-        await onDelete(movie_id, comment_id);
-      };
+    const handleDeleteClick = async () => { // function ลบ comment
+        try {
+            await onDelete(movie_id, comment_id);
+          } catch (error) {
+            console.error("Error deleting comment:", error);
+          }
+        }
 
-    const handleSaveEditedComment = (newComment) => {
+    const handleSaveEditedComment = (newComment) => { 
         setIsEditing(false);
         setEditedComment(newComment);
       };
     
-      // Function to cancel editing
-      const handleCancelEditing = () => {
+      
+      const handleCancelEditing = () => { // function ออก สู่โหลดแก้ไขข้อความ
         setIsEditing(false);
       };
   
@@ -34,12 +38,12 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
             <div className='user_data'>
               <h4 className='user-name'>{comment.user}</h4>
               {isEditing ? (
-                // Pass comment.comment as a prop to EditComment component
                 <EditComment commentText={editedComment}
                 movie_id={movie_id}
                 comment_id={comment_id}
                 onSave={handleSaveEditedComment}
-                onCancel={handleCancelEditing} />
+                onCancel={handleCancelEditing} 
+                />
               ) : (
                 <p className='comment-text'>{editedComment}</p>
               )}
@@ -84,10 +88,11 @@ margin-top : 5%;
 }
 
 .Button-container{
-    margin-top : 1%
+    margin-top : 20px
 }
 
 .Edit-data{
+    cursor: pointer;
     font-size: 16px;
     color: #a1e533;
     width: 80px;
@@ -104,12 +109,14 @@ margin-top : 5%;
 }
 
 .Delete-data{
+    cursor: pointer;
     font-size: 16px;
     color: #FF3a3a;
     width: 80px;
     border: none;
     background-color: #211f1f;
     border-radius: 5px;
+    margin-left: 10px;
     transition: 300ms
 }
 

@@ -50,7 +50,7 @@ export const newComment = async (movie_id, comment) => {
     const commentId = Date.now().toString();
 
     const newComment = {
-      commentId : commentId,
+      commentID : commentId,
       user: "USER",
       comment: comment,
     };
