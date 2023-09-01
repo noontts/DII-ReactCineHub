@@ -5,7 +5,7 @@ import Section from "../../components/Section";
 import MovieDetailCard from "../../components/MovieDetailCard";
 import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
-import { CommentDisplay } from "../../components/CommentDisplay";
+import CommentDisplay from "../../components/CommentDisplay"
 import CommentInput from "../../components/CommentInput";
 import { fetchComment } from "../../services/commentsapi";
 
@@ -49,6 +49,7 @@ const MovieDetail = () => {
 
       <CommentInput />
       {commentDisplay}
+      <CommentDisplay/>
     </>
   );
 };

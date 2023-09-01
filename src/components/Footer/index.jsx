@@ -19,6 +19,8 @@ export const Footer = ({className}) => {
                         <li><box-icon name='instagram-alt' type='logo'color="white" size="md"></box-icon></li>
                         <li><box-icon name='envelope' type='solid' color="white" size="md"></box-icon></li>
                     </ul>
+
+                    
                 </div>
                 
             <div className="copyright">
@@ -30,7 +32,7 @@ export const Footer = ({className}) => {
   )
 }
 export default styled(Footer)`
-   height: 100%;
+
    position: relative;
    background-color: black;
 
