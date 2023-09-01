@@ -12,6 +12,7 @@ import PaginatePage from "./pages/PaginateMovie";
 import Footer from "./components/Footer";
 import "./App.css";
 
+
 function App() {
 
   return (
