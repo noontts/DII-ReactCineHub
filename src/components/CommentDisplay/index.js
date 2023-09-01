@@ -1,13 +1,13 @@
 import  React from 'react';
 import './CommentDisplay.css'
 
-export const CommentDisplay = () => {
+export const CommentDisplay = ({comment}) => {
     return(
         <>
             <div className='comment-containner'>
                 <div className='user_data'>
-                    <h4 className='user-name'>User ท่านใด</h4>
-                    <p className='comment-text'>หนังไม่สนุกครับ ป็อปคอร์นไม่อร่อย</p>
+                    <h4 className='user-name'>{comment.user}</h4>
+                    <p className='comment-text'>{comment.comment}</p>
                 </div>
                 <div className='Button-container'>
                     <button className='Edit-data'>Edit</button>

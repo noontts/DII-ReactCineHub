@@ -3,24 +3,27 @@ import axios from 'axios';
 const COMMENTS_URL = 'http://localhost:9000/comments';
 
 export const newComment = async(movie_id,user,comment) =>{
-    const newComment = {
-      user: "user3",
-      comment: "The visual effects were stunning!"
-    };
-    axios.patch(`${COMMENTS_URL}/${movie_id}`, {
-      movie_id: "movie_id",
-      comments: [
-          ...existingComments, // Make sure to replace this with the existing comments array
-          newComment
-      ]
-  })
-      .then(response => {
-          console.log('Comment added successfully:', response.data);
-      })
-      .catch(error => {
-          console.error('Error adding comment:', error);
+    try {
+        const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
+        const existingComments = response.data.comments;
+    
+        const newComment = {
+          user: "USER",
+          comment: comment,
+        };
+
+        existingComments.push(newComment);
+
+      await axios.patch(`${COMMENTS_URL}/${movie_id}`, {
+        movie_id: `${movie_id}`,
+        comments: existingComments // Updated comments array
       });
-  }
+      
+      console.log('Comment added successfully:', response.data);
+    }catch(error) {
+          console.error('Error adding comment:', error);
+    }
+  };
   
 export const updateComment = async(movie_id,user,comment) =>{
     const updatedComment = {
@@ -54,4 +57,24 @@ export const updateComment = async(movie_id,user,comment) =>{
     .catch(error => {
         console.error('Error fetching comments:', error);
     });
+  }
+
+
+  export const fetchComment = async(movie_id) =>{
+    try {
+        // Make a GET request to the server using Axios
+        const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
+        
+        // Check if the request was successful
+        if (response.status === 200) {
+          // Movie data is in response.data
+          const commentData = response.data;
+          console.log('Comment Data:', commentData);
+          return commentData;
+        } else {
+          console.error('Failed to fetch movie data');
+        }
+      } catch (error) {
+        console.error('Error fetching movie data:', error);
+      }
   }
