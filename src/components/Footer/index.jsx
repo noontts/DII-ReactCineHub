@@ -93,9 +93,12 @@ export default styled(Footer)`
     right: 30px;
     color: #a6a6a6;
   }
+  .copyright p {
+    font-size: 12px;
+  }
 
   & ul {
-    margin-top: 10px;
+    margin-top: 30px;
     list-style: none;
     align-items: center;
     display: flex;

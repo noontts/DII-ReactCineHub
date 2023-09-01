@@ -34,6 +34,7 @@ const MovieDetail = () => {
 
       // Fetch the updated comments after deletion
       const updatedComments = await fetchComment(movieIdParams.id);
+      console.log(updatedComments);
       setComments(updatedComments.comments);
     } catch (error) {
       console.error("Error deleting comment:", error);
