@@ -72,40 +72,61 @@ export const newComment = async (movie_id, comment) => {
   }
 };
 
-export const updateComment = async (movie_id, user, comment) => {
-  const updatedComment = {
-    user: "user2", // Username to match
-    comment: "I still think the storyline is fantastic!",
-  };
+export const updateComment = async (movie_id, commentID, updatedComment) => {
+  try {
+    // Fetch the existing comments for the movie
+    const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
+    const existingComments = response.data.comments;
 
-  axios
-    .get(`${COMMENTS_URL}/${movie_id}`)
-    .then((response) => {
-      const comments = response.data.comments;
+    // Find the index of the comment with the specified commentID
+    const commentIndex = existingComments.findIndex(comment => comment.commentID === commentID);
 
-      const commentIndex = comments.findIndex(
-        (comment) => comment.user === updatedComment.user
-      );
+    // If the comment with the specified commentID is found, update it
+    if (commentIndex !== -1) {
+      existingComments[commentIndex] = {
+        ...existingComments[commentIndex],
+        comment: updatedComment,
+      };
 
-      if (commentIndex !== -1) {
-        comments[commentIndex].comment = updatedComment.comment;
+      // Send a PATCH request to update the comments
+      await axios.patch(`${COMMENTS_URL}/${movie_id}`, {
+        movie_id: `${movie_id}`,
+        comments: existingComments,
+      });
 
-        axios
-          .patch(`${COMMENTS_URL}/${movie_id}`, {
-            movie_id: movie_id,
-            comments: comments,
-          })
-          .then((patchResponse) => {
-            console.log("Comment updated successfully:", patchResponse.data);
-          })
-          .catch((patchError) => {
-            console.error("Error updating comment:", patchError);
-          });
-      } else {
-        console.log("Comment not found for the specified user.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching comments:", error);
-    });
+      console.log("Comment updated successfully.");
+    } else {
+      console.error("Comment not found with commentID:", commentID);
+    }
+  } catch (error) {
+    console.error("Error updating comment:", error);
+  }
+};
+
+export const deleteComment = async (movie_id, commentID) => {
+  try {
+    // Fetch the existing comments for the movie
+    const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
+    const existingComments = response.data.comments;
+
+    // Find the index of the comment with the specified commentID
+    const commentIndex = existingComments.findIndex(comment => comment.commentID === commentID);
+
+    // If the comment with the specified commentID is found, delete it
+    if (commentIndex !== -1) {
+      existingComments.splice(commentIndex, 1); // Remove the comment from the array
+
+      // Send a PATCH request to update the comments without the deleted comment
+      await axios.patch(`${COMMENTS_URL}/${movie_id}`, {
+        movie_id: `${movie_id}`,
+        comments: existingComments,
+      });
+
+      console.log("Comment deleted successfully.");
+    } else {
+      console.error("Comment not found with commentID:", commentID);
+    }
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+  }
 };
