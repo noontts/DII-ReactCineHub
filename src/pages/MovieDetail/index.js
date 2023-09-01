@@ -7,7 +7,7 @@ import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
 import CommentDisplay from "../../components/CommentDisplay";
 import CommentInput from "../../components/CommentInput";
-import { fetchComment } from "../../services/commentsapi";
+import { fetchComment, createNewMovie } from "../../services/commentsapi";
 
 const MovieDetail = () => {
   let commentDisplay;
@@ -33,7 +33,6 @@ const MovieDetail = () => {
   };
 
   if (comments.length > 0) {
-
     commentDisplay = comments.map((commentData, index) => (
       <CommentDisplay key={index} comment={commentData} />
     ));

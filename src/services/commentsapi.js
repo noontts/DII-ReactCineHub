@@ -2,6 +2,28 @@ import axios from "axios";
 
 const COMMENTS_URL = "http://localhost:9000/comments";
 
+export const fetchComment = async (movie_id) => {
+  try {
+    // Make a GET request to the server using Axios
+    const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
+
+    // Check if the request was successful
+    if (response.status === 200) {
+      // Movie data is in response.data
+      const commentData = response.data;
+      console.log("Comment Data:", commentData);
+      return commentData;
+    } else {
+      console.error("Failed to fetch movie data");
+    }
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      await createNewMovie(movie_id);
+    }else{
+      console.error("Error fetching movie data:", error);
+    }
+  }
+};
 
 export const createNewMovie = async (movie_id) => {
   try {
@@ -13,7 +35,7 @@ export const createNewMovie = async (movie_id) => {
     // You may need to adjust this part based on your API or database setup
     await axios.post(`${COMMENTS_URL}`, newMovieData);
 
-    // Optionally, you can log a message or handle success here
+    // log a message or handle success here
     console.log(`New movie with movie_id ${movie_id} created successfully.`);
   } catch (error) {
     console.error("Error creating a new movie:", error);
@@ -24,16 +46,14 @@ export const createNewMovie = async (movie_id) => {
 
 export const newComment = async (movie_id, comment) => {
   try {
+
+    const commentId = Date.now().toString();
+
     const newComment = {
+      commentId : commentId,
       user: "USER",
       comment: comment,
     };
-
-    const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
-    if (response.status === 404) {
-      await createNewMovie(movie_id);
-      console.log("halo")
-    }
 
     const updatedResponse = await axios.get(`${COMMENTS_URL}/${movie_id}`);
     const existingComments = updatedResponse.data.comments;
@@ -45,7 +65,7 @@ export const newComment = async (movie_id, comment) => {
       comments: existingComments, // Updated comments array
     });
 
-    console.log("Comment added successfully:", response.data);
+    console.log("Comment added successfully:", updatedResponse.data);
     return newComment;
   } catch (error) {
     console.error("Error adding comment:", error);
@@ -88,23 +108,4 @@ export const updateComment = async (movie_id, user, comment) => {
     .catch((error) => {
       console.error("Error fetching comments:", error);
     });
-};
-
-export const fetchComment = async (movie_id) => {
-  try {
-    // Make a GET request to the server using Axios
-    const response = await axios.get(`${COMMENTS_URL}/${movie_id}`);
-
-    // Check if the request was successful
-    if (response.status === 200) {
-      // Movie data is in response.data
-      const commentData = response.data;
-      console.log("Comment Data:", commentData);
-      return commentData;
-    } else {
-      console.error("Failed to fetch movie data");
-    }
-  } catch (error) {
-    console.error("Error fetching movie data:", error);
-  }
 };
