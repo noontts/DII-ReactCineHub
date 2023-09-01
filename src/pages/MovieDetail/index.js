@@ -7,7 +7,7 @@ import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
 import CommentDisplay from "../../components/CommentDisplay";
 import CommentInput from "../../components/CommentInput";
-import { fetchComment, createNewMovie } from "../../services/commentsapi";
+import { fetchComment } from "../../services/commentsapi";
 
 const MovieDetail = () => {
   let commentDisplay;

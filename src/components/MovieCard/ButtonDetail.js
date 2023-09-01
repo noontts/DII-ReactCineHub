@@ -39,6 +39,6 @@ export default styled(ButtonDetail)`
 `;
 
 ButtonDetail.propTypes = {
-  movieID: PropTypes.string.isRequired,
+  movieID: PropTypes.number.isRequired,
   className: PropTypes.string,
 };

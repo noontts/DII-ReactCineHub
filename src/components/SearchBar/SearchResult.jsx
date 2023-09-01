@@ -1,5 +1,5 @@
 import React from 'react';
-import Proptype from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const SearchResult = ({result,className, setResults}) => {
 
 
 SearchResult.prototype = {
-  result: Proptype.array.isRequired
+  result: PropTypes.array.isRequired
 }
 
 
