@@ -120,23 +120,5 @@ margin-top : 5%;
 
 }
 
-.Cancel{
-    font-size: 16px;
-    color: #FF3a3a;
-    width: 80px;
-    border: none;
-    background-color: #211f1f;
-    border-radius: 5px;
-    z-index: 1001;
-    transition: 300ms
-}
-
-.Cancel:hover{
-    color: #FFFF;
-    background-color: #FF3a3a;
-    transition: 300ms
-}
-
-
 
 `
