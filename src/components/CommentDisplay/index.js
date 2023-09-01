@@ -1,25 +1,62 @@
-import  React from 'react';
+import  React,{useState} from 'react';
 import styled from 'styled-components'
+import EditComment  from './EditComment';
 
-export const CommentDisplay = ({comment, className}) => {
-    return(
 
-    <>
+export const CommentDisplay = ({ comment, className , movie_id , comment_id , onDelete}) => {
+    // State to manage whether the comment is being edited
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedComment, setEditedComment] = useState(comment.comment);
+  
+    // Function to handle the "Edit" button click
+    const handleEditClick = () => {
+      setIsEditing(true);
+    };
+
+    const handleDeleteClick = async () => {
+        await onDelete(movie_id, comment_id);
+      };
+
+    const handleSaveEditedComment = (newComment) => {
+        setIsEditing(false);
+        setEditedComment(newComment);
+      };
+    
+      // Function to cancel editing
+      const handleCancelEditing = () => {
+        setIsEditing(false);
+      };
+  
+    return (
+      <>
         <div className={className}>
-            <div className='comment-containner'>
-                <div className='user_data'>
-                    <h4 className='user-name'>{comment.user}</h4>
-                    <p className='comment-text'>{comment.comment}</p>
-                </div>
-                <div className='Button-container'>
-                    <button className='Edit-data'>Edit</button>
-                    <button className='Delete-data'>Delete</button>
-                </div>
+          <div className='comment-container'>
+            <div className='user_data'>
+              <h4 className='user-name'>{comment.user}</h4>
+              {isEditing ? (
+                // Pass comment.comment as a prop to EditComment component
+                <EditComment commentText={editedComment}
+                movie_id={movie_id}
+                comment_id={comment_id}
+                onSave={handleSaveEditedComment}
+                onCancel={handleCancelEditing} />
+              ) : (
+                <p className='comment-text'>{editedComment}</p>
+              )}
             </div>
+            <div className='Button-container'>
+            {isEditing ? null : (
+              <>
+                <button className='Edit-data' onClick={handleEditClick}>Edit</button>
+                <button className='Delete-data' onClick={handleDeleteClick}>Delete</button>
+              </>
+            )}
+          </div>
+          </div>
         </div>
-    </> 
-    )
-}
+      </>
+    );
+  };
 
 export default styled(CommentDisplay)`
 
@@ -81,6 +118,23 @@ margin-top : 5%;
     background-color: #FF3a3a;
     transition: 300ms
 
+}
+
+.Cancel{
+    font-size: 16px;
+    color: #FF3a3a;
+    width: 80px;
+    border: none;
+    background-color: #211f1f;
+    border-radius: 5px;
+    z-index: 1001;
+    transition: 300ms
+}
+
+.Cancel:hover{
+    color: #FFFF;
+    background-color: #FF3a3a;
+    transition: 300ms
 }
 
 

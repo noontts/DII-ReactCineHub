@@ -7,7 +7,7 @@ import SliderMovie from "../../components/SliderMovie";
 import SliderImg from "../../components/SliderImg";
 import CommentDisplay from "../../components/CommentDisplay";
 import CommentInput from "../../components/CommentInput";
-import { fetchComment } from "../../services/commentsapi";
+import { fetchComment , deleteComment } from "../../services/commentsapi";
 
 const MovieDetail = () => {
   let commentDisplay;
@@ -27,6 +27,19 @@ const MovieDetail = () => {
     fetchCommentData();
   }, [movieIdParams.id]);
 
+   const handleDeleteComment = async (movie_id, comment_id) => {
+    try {
+      // Delete the comment
+      await deleteComment(movie_id, comment_id);
+
+      // Fetch the updated comments after deletion
+      const updatedComments = await fetchComment(movieIdParams.id);
+      setComments(updatedComments.comments);
+    } catch (error) {
+      console.error("Error deleting comment:", error);
+    }
+  };
+
   const handleNewComment = (newCommentData) => {
     // Update the comments state with the new comment
     setComments([...comments, newCommentData]);
@@ -34,7 +47,7 @@ const MovieDetail = () => {
 
   if (comments.length > 0) {
     commentDisplay = comments.map((commentData, index) => (
-      <CommentDisplay key={index} comment={commentData} />
+      <CommentDisplay key={index} comment={commentData} movie_id={movieIdParams.id} comment_id={commentData.commentID} onDelete={handleDeleteComment} />
     ));
   }
 

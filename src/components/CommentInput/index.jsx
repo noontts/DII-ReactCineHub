@@ -59,6 +59,7 @@ export default styled(CommentInput)`
     width: 1200px;
     border-radius: 7px;
     font-size: 17px;
+    resize: none;
   }
   .Comment button {
     margin-top: 20px;
