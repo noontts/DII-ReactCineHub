@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import MovieCard from "../components/MovieCard";
-import { fetchData } from "../services/movieapi";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUpcomingMovies,
-  fetchTopRatedMovies,
-  fetchNowPlayingMovies,fetchPopularMovies,fetchRecommendMovies } from "../actions"
+import { useSelector} from "react-redux";
 
 
-function SliderMovie({ endpoint, page, movieID, className }) {
-  // const [data, setData] = useState([]);
+function SliderMovie({ endpoint, className }) {
+
   const data = useSelector((state) => {
     switch (endpoint) {
       case "upcoming":
