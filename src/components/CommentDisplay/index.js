@@ -32,7 +32,10 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
         <div className={className}>
           <div className='comment-container'>
             <div className='user_data'>
-              <h4 className='user-name'>{comment.user}</h4>
+              <div className='profile_container'>
+                <div className='profile'></div>
+                <h4 className='user-name'>{comment.user}</h4>
+              </div>
               {isEditing ? (
                 <EditComment commentText={editedComment}
                 movie_id={movie_id}
@@ -59,9 +62,11 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
   };
 
 export default styled(CommentDisplay)`
-
+border-top: 1px solid #d9d9d9;
 width : 1150px;
-margin-top : 5%;
+margin-top : 3%;
+padding-top: 30px;
+padding-left: 30px;
 
 .comment-containner{
     width: 100%;
@@ -69,12 +74,28 @@ margin-top : 5%;
     margin-left: 5%;
 }
 
+.profile_container{
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  background-image: url(https://i.pinimg.com/736x/02/af/6f/02af6f406b25e5c284daa0c39cf96a9a.jpg);
+  background-position: center;
+  background-size: 30px 30px;
+  border: 2px solid #a1e533;
+}
+
 .user-name{
     font-weight: bold;
     font-size: 20px;
     color:#FFF;
-
-    margin-bottom : 1%
+    margin-bottom : 1%;
+    margin-left: 10px;
 }
 
 .comment-text{

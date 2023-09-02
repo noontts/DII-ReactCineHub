@@ -10,16 +10,16 @@ export const SidebarData = [
 
     },
     {
-        title: 'Top 50',
-        path: '/Top-50',
-        icon:  <BiIcons.BiSolidStar className='icon'/>,
+        title: 'Top Rate',
+        path: '/top-rate/1',
+        icon:  <BiIcons.BiSolidStar className='icon_top'/>,
         cName:'nav-text'
 
     },
     {
         title: 'Favorite',
         path: '/Favorite',
-        icon: <BiIcons.BiSolidHeart className='icon'/>,
+        icon: <BiIcons.BiSolidHeart className='icon_fav'/>,
         cName:'nav-text'
 
     },
