@@ -154,13 +154,17 @@ img{
 }
 .button-explore-more{
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 200px;
     height: 65px;
     border-radius: 15px;
     background: #000 ;
     text-shadow: 0px 4px 4px #000;
     color: #A1E533;
-    font-size: 1.2em;
+    font-size: 22px;
     font-weight: bolder;
     margin-top: 30px;
     border: 2px solid #A1E533;
@@ -171,6 +175,7 @@ img{
     cursor: pointer;
     /* color: #A1E533; */
     color: #FFF;
+    font-size: 22px;
     transition: 300ms;
     text-shadow:none;
     background: #A1E533;
