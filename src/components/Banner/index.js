@@ -210,5 +210,6 @@ img{
 
 .swiper-pagination-bullet{
   color: white;
+  background-color: #A1E533;
 }
 `
