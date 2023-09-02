@@ -4,7 +4,6 @@ import EditComment  from './EditComment';
 
 
 export const CommentDisplay = ({ comment, className , movie_id , comment_id , onDelete}) => { 
-
     const [isEditing, setIsEditing] = useState(false);
     const [editedComment, setEditedComment] = useState(comment.comment);
   
@@ -13,9 +12,8 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
     };
 
     const handleDeleteClick = async () => {
-      console.log(movie_id);
         await onDelete(movie_id, comment.commentId);
-      };
+    };
 
     const handleSaveEditedComment = (newComment) => { 
         setIsEditing(false);

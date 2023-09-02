@@ -21,8 +21,8 @@ export const FavoritesProvider = ({ children }) => {
   };
 
   const removeFromFavorites = (movieObj) => {
-    setFavoriteMovie((prevFavorites) =>
-      prevFavorites.filter((favoriteMovie) => favoriteMovie.id !== movieObj.id)
+    setFavoriteMovie((prevFavorites) => 
+    prevFavorites.filter((favoriteMovie) => favoriteMovie.id !== movieObj.id)
     );
     console.log(`${movieObj.id} is Delete!`);
   };
