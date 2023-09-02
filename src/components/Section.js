@@ -60,6 +60,7 @@ export default styled(Section)`
     color: gray;
     text-decoration: none;
     font-size: 20px;
+    transition: 300ms;
   }
 
   .more-icon {
@@ -68,5 +69,6 @@ export default styled(Section)`
   }
   .more-link:hover {
     color: white;
+    transition: 300ms;
   }
 `;
