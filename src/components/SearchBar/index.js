@@ -31,7 +31,7 @@ function SearchBar({ setResults, className }) {
 }
 
 export default styled(SearchBar)`
-  height: 50px;
+  height: 40px;
   min-width: 500px;
   border-radius: 40px;
   border: 1px solid #000;

@@ -9,3 +9,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-scrollbar {
+    height: 30px;
+}
+
+::-webkit-scrollbar-track{
+    background:#000;
+    border: 1px solid 211f1f;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #a1e533;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 300ms;
+}
+

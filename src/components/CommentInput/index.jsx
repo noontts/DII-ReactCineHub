@@ -71,11 +71,23 @@ export default styled(CommentInput)`
     font-weight: 1000;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 
     transition: all ease 0.1s;
     box-shadow: 0px 5px 0px 0px #c1f4d2;
   }
+
+  .Comment button:hover{
+    background-color: #b3ff3a;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    transition: 100ms;
+  }
+
+
   .Comment button:active {
+    background: #a1e533;
     transform: translateY(5px);
     color: black;
     box-shadow: 0px 0px 0px 0px #c1f4d2;

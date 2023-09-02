@@ -24,20 +24,23 @@ export function EditComment({ commentText,className , movie_id , comment_id , on
 
   return (
     <div className={className}>
-    <div className='editContainer'>
-      <h1 className='header_edit'>Edit</h1>
-      <textarea
-        type="text"
-        className='new_Data'
-        value={editedComment}
-        onChange={handleCommentChange}
-      />
+        <div className='editContainer'>
+            <div className='Data_container'>
+                <h1 className='header_edit'>Edit Your Comment</h1>
+                <textarea
+                    type="text"
+                    className='new_Data'
+                    value={editedComment}
+                    onChange={handleCommentChange}
+                />
 
-      <div className='Button-container'>
-        <button className='Save' onClick={saveEditedComment}>Save</button>
-        <button className='Cancel' onClick={cancelEditing}>Cancel</button>
-      </div>
-    </div>
+                <div className='Button-container'>
+                    <button className='Cancel' onClick={cancelEditing}>Cancel</button>
+                    <button className='Save' onClick={saveEditedComment}>Save</button>
+                </div>
+            </div>
+        </div>
+
   </div>
   );
 }
@@ -48,18 +51,35 @@ export default styled(EditComment)`
     left: 0%;
 
     .editContainer{
-        width: 50%;
+        width: 100%;
         height: 50%;
 
-        background-color: #7adada;
+        background-color: #211f1f;
         z-index: 1000;
 
+        border-radius: 12px;
+        border: 3px solid #FFF;
+        transition: 300ms;
+
         opacity: 1;
+    }
+
+    .editContainer:hover{
+        border: 3px solid #a1e533;
+        transition: 300ms;
+    }
+
+    .Data_container{
+        padding: 50px;
+        margin-left: 50px;
+        
     }
 
     .header_edit{
         font-size: 28px;
         font-weight: bold;
+        color: #FFF;
+        text-shadow: 4px 4px 4px rgba(81, 219, 50, 0.5);
     }
 
     .user_data{
@@ -71,13 +91,75 @@ export default styled(EditComment)`
         font-size: 16px;
         margin-top: 10px;
         padding: 10px;
-        border: 1px solid #0000;
+        border: 2px solid #211f1f;
         height: 120px;
-        width: 1200px;
+        width: 900px;
         border-radius: 7px;
         font-size: 17px;
         resize: none;
+
+        background-color: #D9d9d9;
+        box-shadow: 5px 10px 10px;
     }
+
+.Button-container{
+    margin-left: 0px;
+}
+
+.Save{
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+    width: 100px;
+    margin-left: 20px;
+    border: none;
+    background-color: #a1e533;
+    border: solid 1px #a1e533;
+    border-radius: 5px;
+    transition: 300ms
+}
+
+.Save:hover{
+    color: #FFFF;
+    background-color: #17B00A;
+    border: solid 1px #17B00A;
+    transition: 300ms;
+}
+
+.Save:active{
+    color: #FFFF;
+    background-color: #7BFF79;
+    border: solid 1px #7BFF79;
+    transition: 100ms;
+}
+    
+
+.Cancel{
+    cursor: pointer;
+    font-size: 20px;
+    color: #FF3a3a;
+    text-shadow: 2px 2px 1px rgba(255, 122, 122, 0.25);
+    width: 100px;
+    border: none;
+    background-color: #211f1f;
+    border-radius: 5px;
+    border: solid 1px #FF3a3a;
+    z-index: 1001;
+    transition: 300ms
+}
+
+.Cancel:hover{
+    color: #FFFF;
+    background-color: #FF3a3a;
+    transition: 300ms
+}
+
+.Cancel:active{
+    color: #FFFF;
+    background-color: #FF7A7A;
+    transition: 100ms
+}
 
 
 

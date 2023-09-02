@@ -26,15 +26,19 @@ export default styled(ButtonDetail)`
     font-size: 12px;
     text-decoration: none;
     padding: 6px 22px;
+    border: 2px solid #a1e533;
     border-radius: 15px;
     background: #a1e533;
     color: #fff;
     font-weight: 700;
+    transition: 200ms;
   }
 
   .btn-detail:hover {
     background-color: #ffffff;
     color: #a1e533;
+    transition: 200ms;
+    border: 2px solid #a1e533;
   }
 `;
 
