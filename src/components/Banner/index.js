@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect } from 'react';
 import { fetchData } from '../../services/movieapi';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -51,7 +52,7 @@ export function Banner({className}) {
               <div className='left-content'>
                   <h1>{data[0].original_title}</h1>
                   <p className='para-defined'>{data[0].overview}</p>
-                  <button className='button-explore-more'>Explore more...</button>
+                  <Link to={`/movie/${data[0].id}`} className='button-explore-more'>Explore more...</Link>
               </div>
                   
                   <h2>#<span className='spaning'>1</span></h2>
@@ -66,7 +67,7 @@ export function Banner({className}) {
               <div className='left-content'>
                   <h1>{data[1].original_title}</h1>
                   <p className='para-defined'>{data[1].overview}</p>
-                  <button className='button-explore-more'>Explore more...</button>
+                  <Link to={`/movie/${data[1].id}`} className='button-explore-more'>Explore more...</Link>
               </div>
                  
                   <h2>#<span className='spaning'>2</span></h2>
@@ -77,7 +78,7 @@ export function Banner({className}) {
               <div className='left-content'>
                   <h1>{data[3].original_title}</h1>
                   <p className='para-defined'>{data[3].overview}</p>
-                  <button className='button-explore-more'>Explore more...</button>
+                  <Link to={`/movie/${data[3].id}`} className='button-explore-more'>Explore more...</Link>
               </div>
                 
                   <h2>#<span className='spaning'>3</span></h2>
@@ -152,6 +153,7 @@ img{
     object-fit: fill;
 }
 .button-explore-more{
+    text-decoration: none;
     width: 200px;
     height: 65px;
     border-radius: 15px;
