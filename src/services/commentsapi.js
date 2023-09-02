@@ -58,7 +58,7 @@ export const newComment = async (movie_id, comment) => {
     const updatedResponse = await axios.get(`${COMMENTS_URL}/${movie_id}`);
     const existingComments = updatedResponse.data.comments;
 
-    existingComments.push(newComment);
+    existingComments.unshift(newComment);
 
     await axios.patch(`${COMMENTS_URL}/${movie_id}`, {
       movie_id: `${movie_id}`,
@@ -79,6 +79,7 @@ export const updateComment = async (movie_id, commentID, updatedComment) => {
     const existingComments = response.data.comments;
 
     // Find the index of the comment with the specified commentID
+    console.log(existingComments)
     const commentIndex = existingComments.findIndex(comment => comment.commentID === commentID);
 
     // If the comment with the specified commentID is found, update it

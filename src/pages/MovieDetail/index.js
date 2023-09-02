@@ -42,13 +42,13 @@ const MovieDetail = () => {
 
   const handleNewComment = (newCommentData) => {
     // Update the comments state with the new comment
-    setComments([...comments, newCommentData]);
+    setComments([newCommentData,...comments]);
   };
 
   if (comments.length > 0) {
     console.log(comments);
     commentDisplay = comments.map((commentData) => (
-      <CommentDisplay key={commentData.commentId} comment={commentData} movie_id={movieIdParams.id} comment_id={commentData.commentID} onDelete={handleDeleteComment} />
+      <CommentDisplay key={commentData.commentID} comment={commentData} movie_id={movieIdParams.id} comment_id={commentData.commentID} onDelete={handleDeleteComment} />
     ));
   }
 
