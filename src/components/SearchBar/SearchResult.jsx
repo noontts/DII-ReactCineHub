@@ -4,36 +4,29 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-
-
 const SearchResult = ({result,className, setResults}) => {
-  const imgPath = "https://image.tmdb.org/t/p/original";
-  const imgMovie = `${imgPath}/${result.poster_path}`;
-  const valueInput = document.getElementById('searchbar');
+  const posterPath = `https://image.tmdb.org/t/p/original/${result.poster_path}`;
   
   return (
+
     <Link className={className} to={`/movie/${result.id}`} onClick={(e) => {
-      valueInput.value = ' ';
       setResults([]);
     }}>
 
-      <img src={imgMovie}></img>
+      <img src={posterPath} alt=''></img>
       <div className="title-movie">
         <h3>{result.title}</h3>
         <p>{result.release_date}</p>
       </div>
-     
      
       </Link>
   )
 
 }
 
-
 SearchResult.prototype = {
   result: PropTypes.array.isRequired
 }
-
 
 export default styled(SearchResult)`
   text-decoration: none;

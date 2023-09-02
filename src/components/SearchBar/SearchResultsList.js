@@ -7,14 +7,17 @@ function SearchResultsList ({ results , className, setResults}){
 
   const maxResult = results.slice(0,5);
   return (
+
     <div className={className}>
       {/* ... rest of the code */
          maxResult.map((results)=> {
           return <SearchResult result={results} key={results.id} setResults={setResults}/>
+
         })
       
       }
     </div>
+    
   );
 }
 
