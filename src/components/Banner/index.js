@@ -47,7 +47,7 @@ export function Banner({className}) {
         className={className} 
       >
         <SwiperSlide >
-          <div className='banner-content'style={{ backgroundImage: `url(${backgroundpath}${data[0].backdrop_path})`,opacity:`0.9` }} >
+          <div className='banner-content'style={{ backgroundImage: `url(${backgroundpath}${data[0].backdrop_path})`,opacity:`0.9`,backgroundBlendMode:`lighten` }} >
               <div className='left-content'>
                   <h1>{data[0].original_title}</h1>
                   <p className='para-defined'>{data[0].overview}</p>
@@ -108,7 +108,8 @@ export default styled(Banner)`
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  
+  
 }
 .left-content{
   display: flex;
@@ -162,10 +163,20 @@ img{
     cursor: pointer;
     /* color: #A1E533; */
     color: black;
-    transition: 2s;
+    transition: 900ms;
     text-shadow:none;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(226,233,241,1) 100%);
     background-color: aliceblue;
+}
+.swiper-button-prev{
+
+  color: #A1E533;
+}
+.swiper-button-next{
+  color: #A1E533;
+}
+.swiper-pagination-bullet{
+  color: white;
 }
 `
