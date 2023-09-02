@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export function Banner({className}) {
   const [data, setData] = useState('');
@@ -37,15 +37,19 @@ export function Banner({className}) {
     <>
    
     <Swiper 
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className={className} 
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination, Navigation]}
+          className={className} 
       >
         <SwiperSlide >
           <div className='banner-content'style={{ backgroundImage: `url(${backgroundpath}${data[0].backdrop_path})`,opacity:`0.9`,backgroundBlendMode:`lighten` }} >
