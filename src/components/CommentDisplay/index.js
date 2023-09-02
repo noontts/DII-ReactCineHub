@@ -8,13 +8,13 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
     const [isEditing, setIsEditing] = useState(false);
     const [editedComment, setEditedComment] = useState(comment.comment);
   
-    // Function to handle the "Edit" button click
     const handleEditClick = () => {
       setIsEditing(true);
     };
 
     const handleDeleteClick = async () => {
-        await onDelete(movie_id, comment_id);
+      console.log(movie_id);
+        await onDelete(movie_id, comment.commentId);
       };
 
     const handleSaveEditedComment = (newComment) => {

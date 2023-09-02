@@ -32,9 +32,9 @@ const MovieDetail = () => {
       // Delete the comment
       await deleteComment(movie_id, comment_id);
 
-      // Fetch the updated comments after deletion
-      const updatedComments = await fetchComment(movieIdParams.id);
+      const updatedComments = await fetchComment(movie_id);
       setComments(updatedComments.comments);
+
     } catch (error) {
       console.error("Error deleting comment:", error);
     }
@@ -46,8 +46,9 @@ const MovieDetail = () => {
   };
 
   if (comments.length > 0) {
-    commentDisplay = comments.map((commentData, index) => (
-      <CommentDisplay key={index} comment={commentData} movie_id={movieIdParams.id} comment_id={commentData.commentID} onDelete={handleDeleteComment} />
+    console.log(comments);
+    commentDisplay = comments.map((commentData) => (
+      <CommentDisplay key={commentData.commentId} comment={commentData} movie_id={movieIdParams.id} comment_id={commentData.commentID} onDelete={handleDeleteComment} />
     ));
   }
 
