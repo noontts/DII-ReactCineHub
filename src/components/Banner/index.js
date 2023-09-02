@@ -68,20 +68,20 @@ export function Banner({className}) {
                   <p className='para-defined'>{data[1].overview}</p>
                   <button className='button-explore-more'>Explore more...</button>
               </div>
-                  <div className='right-content'>
+                 
                   <h2>#<span className='spaning'>2</span></h2>
-              </div>
+            
           </div>
         </SwiperSlide>
-        <SwiperSlide><div className='banner-content' style={{ backgroundImage: `url(${backgroundpath}${data[2].backdrop_path})`,opacity:`0.9` }} >
+        <SwiperSlide><div className='banner-content' style={{ backgroundImage: `url(${backgroundpath}${data[3].backdrop_path})`,opacity:`0.9` }} >
               <div className='left-content'>
-                  <h1>{data[2].original_title}</h1>
-                  <p className='para-defined'>{data[2].overview}</p>
+                  <h1>{data[3].original_title}</h1>
+                  <p className='para-defined'>{data[3].overview}</p>
                   <button className='button-explore-more'>Explore more...</button>
               </div>
-                  <div className='right-content'>
+                
                   <h2>#<span className='spaning'>3</span></h2>
-              </div>
+             
           </div>
           </SwiperSlide>
       
@@ -122,19 +122,15 @@ export default styled(Banner)`
 h1{
   font-size: 50px;
 }
-  p {
+p {
     width: 80%;
 
     font-weight: 1000;
 }
-.right-content{
-    height: 300px;
-    right: 45px;
-    position: absolute;
-}
+
 h2{
   position: absolute;
-  right: 0;
+  right: 45px;
   font-size: 80px;
 }
 .spaning{
@@ -149,16 +145,6 @@ img{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     object-fit: fill;
 }
-
-
-
-/* Optional: Center the Swiper */
-/* .swiper-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .button-explore-more{
     width: 200px;
     height: 65px;
