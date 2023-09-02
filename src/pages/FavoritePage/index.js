@@ -8,7 +8,7 @@ export const FavoritePage = () => {
 
 
   if(favoriteMovie.length === 0){
-    return <div>Not Have</div>
+    return <div style={{fontSize:'48px',fontWeight:'Bold',color:'#FFF',textShadow:'4px 4px 4px rgba(33,31,31,0.75)'}}>Not Have</div>
   }
 
   return (
