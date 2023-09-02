@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import MovieCard from "../components/MovieCard";
 import { fetchData } from "../services/movieapi";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUpcomingMovies,
+  fetchTopRatedMovies,
+  fetchNowPlayingMovies,fetchPopularMovies,fetchRecommendMovies } from "../actions"
 
 
 function SliderMovie({ endpoint, page, movieID, className }) {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchDataFromApi = async () => {
-      try {
-        const result = await fetchData(endpoint, page, movieID);
-        setData(result.results);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchDataFromApi();
-  }, [endpoint, page, movieID]);
+  // const [data, setData] = useState([]);
+  const data = useSelector((state) => {
+    switch (endpoint) {
+      case "upcoming":
+        return state.upcoming;
+      case "top_rated":
+        return state.top_rated;
+      case "now_playing":
+        return state.now_playing;
+      case "popular":
+        return state.popular;
+      default:
+        return [];
+    }
+  });
 
 
   const settings = {
@@ -27,6 +33,10 @@ function SliderMovie({ endpoint, page, movieID, className }) {
     slidesToShow: 5,
     slidesToScroll: 4
   };
+
+  if (data.length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Slider className={className} {...settings}>
