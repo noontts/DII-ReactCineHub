@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { styled } from 'styled-components'
 import { updateComment } from '../../services/commentsapi';
+import PropTypes from 'prop-types';
 
 export function EditComment({ commentText,className , movie_id , comment_id , onSave, onCancel }) {
   // State to store the edited comment text
@@ -45,6 +46,14 @@ export function EditComment({ commentText,className , movie_id , comment_id , on
   );
 }
 
+EditComment.propTypes = {
+    commentText : PropTypes.string.isRequired,
+    comment_id : PropTypes.string.isRequired,
+    className : PropTypes.string,
+    movie_id : PropTypes.string.isRequired,
+    onSave : PropTypes.func.isRequired,
+    onCancel : PropTypes.func.isRequired
+}
 
 export default styled(EditComment)`
 

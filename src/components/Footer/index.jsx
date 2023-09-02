@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import imgRobot from "../LogoCard/robot logo.png";
+import PropTypes from 'prop-types';
 
 export const Footer = ({ className }) => {
 
@@ -78,6 +79,10 @@ export const Footer = ({ className }) => {
     </div>
   );
 };
+
+Footer.propTypes = {
+  className : PropTypes.string
+}
 
 export default styled(Footer)`
   position: relative;

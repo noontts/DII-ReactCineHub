@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { searchMovie } from "../../services/movieapi";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 function SearchBar({ setResults, className }) {
   const [input, setInput] = useState("");
@@ -15,6 +16,10 @@ function SearchBar({ setResults, className }) {
     setResults(movieSearch.results);
   };
 
+  SearchBar.propTypes = {
+    setResults : PropTypes.func.isRequired,
+    className : PropTypes.string
+  }
   return (
     <>
       <div className={className}>

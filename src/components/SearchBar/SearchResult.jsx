@@ -24,8 +24,10 @@ const SearchResult = ({result,className, setResults}) => {
 
 }
 
-SearchResult.prototype = {
-  result: PropTypes.array.isRequired
+SearchResult.propTypes = {
+  result: PropTypes.array.isRequired,
+  className: PropTypes.string,
+  setResults: PropTypes.func
 }
 
 export default styled(SearchResult)`

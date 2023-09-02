@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
 
 const Section = ({ title, children, haveLink = false, link, className }) => {
   return (
@@ -22,6 +23,13 @@ const Section = ({ title, children, haveLink = false, link, className }) => {
   );
 };
 
+Section.propTypes = {
+  title : PropTypes.string.isRequired,
+  children : PropTypes.node,
+  haveLink : PropTypes.bool,
+  link : PropTypes.string,
+  className : PropTypes.string
+}
 export default styled(Section)`
   .title-section {
     display: flex;

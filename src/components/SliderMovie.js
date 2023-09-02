@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import MovieCard from "../components/MovieCard";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 
 function SliderMovie({ endpoint, className }) {
@@ -43,6 +44,11 @@ function SliderMovie({ endpoint, className }) {
       ))}
     </Slider>
   );
+}
+
+SliderMovie.propTypes = {
+  endpoint : PropTypes.string.isRequired,
+  className : PropTypes.string
 }
 
 export default styled(SliderMovie)`

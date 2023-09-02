@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import { getMovieImages } from '../services/movieapi';
 import '../assets/style/Slider.css';
+import PropTypes from 'prop-types';
 
 export const SliderImg = ({ movieID, className }) => {
   const [images, setImages] = useState([]);
@@ -48,6 +49,10 @@ export const SliderImg = ({ movieID, className }) => {
   );
 };
 
+SliderImg.propTypes = {
+  movieID : PropTypes.string.isRequired,
+  className : PropTypes.string
+}
 export default styled(SliderImg)`
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";

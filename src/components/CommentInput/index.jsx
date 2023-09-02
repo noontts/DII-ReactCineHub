@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { newComment } from "../../services/commentsapi";
+import PropTypes from 'prop-types';
 
 export const CommentInput = ({ className, movie_id, onNewComment }) => {
   const [comments, setComments] = useState("");
@@ -39,6 +40,14 @@ export const CommentInput = ({ className, movie_id, onNewComment }) => {
     </>
   );
 };
+
+
+CommentInput.propTypes = {
+  className : PropTypes.string,
+  movie_id : PropTypes.string.isRequired,
+  onNewComment : PropTypes.func.isRequired
+}
+
 export default styled(CommentInput)`
   .Comment form {
     display: flex;

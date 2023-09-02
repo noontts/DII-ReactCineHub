@@ -19,7 +19,6 @@ export function Home() {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchDataFromApi("upcoming", fetchUpcomingMovies);
     fetchDataFromApi("top_rated", fetchTopRatedMovies);
     fetchDataFromApi("now_playing", fetchNowPlayingMovies);

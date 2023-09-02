@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 function Container({ children, className }) {
   return (
@@ -7,6 +8,11 @@ function Container({ children, className }) {
       <main>{children}</main>
     </div>
   );
+}
+
+Container.propTypes = {
+  children : PropTypes.node,
+  className : PropTypes.string
 }
 
 export default styled(Container)`

@@ -22,7 +22,9 @@ function SearchResultsList ({ results , className, setResults}){
 }
 
 SearchResultsList.propTypes = {
-  results : PropTypes.array.isRequired
+  results : PropTypes.array.isRequired,
+  className : PropTypes.string,
+  setResults : PropTypes.func.isRequired
 }
 
 export default styled(SearchResultsList)`

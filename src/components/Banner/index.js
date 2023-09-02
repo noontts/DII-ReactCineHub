@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect } from 'react';
 import { fetchData } from '../../services/movieapi';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -95,6 +96,10 @@ export function Banner({className}) {
       
     </>
   );
+}
+
+Banner.propTypes = {
+  className : PropTypes.string
 }
 
 export default styled(Banner)`

@@ -1,7 +1,7 @@
 import  React,{useState} from 'react';
 import styled from 'styled-components'
 import EditComment  from './EditComment';
-
+import PropTypes from 'prop-types';
 
 export const CommentDisplay = ({ comment, className , movie_id , comment_id , onDelete}) => { 
     const [isEditing, setIsEditing] = useState(false);
@@ -58,6 +58,14 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
       </>
     );
   };
+
+  CommentDisplay.propTypes = {
+    comment : PropTypes.object.isRequired,
+    comment_id : PropTypes.string.isRequired,
+    className : PropTypes.string,
+    movie_id : PropTypes.string.isRequired,
+    onDelete : PropTypes.func.isRequired
+  }
 
 export default styled(CommentDisplay)`
 border-top: 1px solid #d9d9d9;
