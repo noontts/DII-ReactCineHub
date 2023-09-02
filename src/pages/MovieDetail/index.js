@@ -8,8 +8,12 @@ import SliderImg from "../../components/SliderImg";
 import CommentDisplay from "../../components/CommentDisplay";
 import CommentInput from "../../components/CommentInput";
 import { fetchComment , deleteComment } from "../../services/commentsapi";
+import { fetchData } from "../../services/movieapi";
+import { useDispatch } from "react-redux";
+import { fetchRecommendMovies } from "../../actions"
 
 const MovieDetail = () => {
+  const dispatch = useDispatch();
   let commentDisplay;
   const movieIdParams = useParams();
   const [comments, setComments] = useState([]);
@@ -24,7 +28,19 @@ const MovieDetail = () => {
         setComments([]);
       }
     };
+
+    const fetchMovieRecomment = async () => {
+      try {
+        const result = await fetchData('recommend',1,movieIdParams.id);
+        dispatch(fetchRecommendMovies(result.results));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
     fetchCommentData();
+    fetchMovieRecomment();
+
   }, [movieIdParams.id]);
 
    const handleDeleteComment = async (movie_id, comment_id) => {

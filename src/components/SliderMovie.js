@@ -21,6 +21,8 @@ function SliderMovie({ endpoint, page, movieID, className }) {
         return state.now_playing;
       case "popular":
         return state.popular;
+      case "recommend":
+        return state.recommend;
       default:
         return [];
     }
