@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect } from 'react';
+import { fetchData } from '../../services/movieapi';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import cinihubbro from '../LogoCard/Potter.jpg'
 
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
 export function Banner({className}) {
+  const [data, setData] = useState('');
+  const [isloading , setloading] =useState(true);
+  const backgroundpath = "https://image.tmdb.org/t/p/original/";
   
+  useEffect(() => {
+        const fetchTopRate = async() =>{
+        const response = await fetchData('top_rated');
+        
+        setData(response.results);
+        setloading(false);
+        console.log(response);
+      }
+      fetchTopRate();
+  },[])
+  if(isloading){
+    return <div>Loading...</div>
+  }
   return (
     <>
    
@@ -27,42 +44,43 @@ export function Banner({className}) {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className={className}
+        className={className} 
       >
-        <SwiperSlide>
-          <div className='banner-content'>
+        <SwiperSlide >
+          <div className='banner-content'style={{ backgroundImage: `url(${backgroundpath}${data[0].backdrop_path})`,opacity:`0.9` }} >
               <div className='left-content'>
-                  <h1>MOST START FOREVER</h1>
-                  <p className='para-defined'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                  <button className='button-explore-more'>Explore more</button>
+                  <h1>{data[0].original_title}</h1>
+                  <p className='para-defined'>{data[0].overview}</p>
+                  <button className='button-explore-more'>Explore more...</button>
               </div>
-                  <div className='right-content'>
-                  <img src={cinihubbro}alt='' />
-              </div>
+                  
+                  <h2>#<span className='spaning'>1</span></h2>
+
+          
           </div>
         
        
         </SwiperSlide>
         <SwiperSlide>
-        <div className='banner-content'>
+        <div className='banner-content' style={{ backgroundImage: `url(${backgroundpath}${data[1].backdrop_path})`,opacity:`0.9` }} >
               <div className='left-content'>
-                  <h1>Most Make Money Ever</h1>
-                  <p className='para-defined'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                  <button className='button-explore-more'>Explore more</button>
+                  <h1>{data[1].original_title}</h1>
+                  <p className='para-defined'>{data[1].overview}</p>
+                  <button className='button-explore-more'>Explore more...</button>
               </div>
                   <div className='right-content'>
-                  <img src={cinihubbro}alt='' />
+                  <h2>#<span className='spaning'>2</span></h2>
               </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide><div className='banner-content'>
+        <SwiperSlide><div className='banner-content' style={{ backgroundImage: `url(${backgroundpath}${data[2].backdrop_path})`,opacity:`0.9` }} >
               <div className='left-content'>
-                  <h1>Best Movie In 2023</h1>
-                  <p className='para-defined'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                  <button className='button-explore-more'>Explore more</button>
+                  <h1>{data[2].original_title}</h1>
+                  <p className='para-defined'>{data[2].overview}</p>
+                  <button className='button-explore-more'>Explore more...</button>
               </div>
                   <div className='right-content'>
-                  <img src={cinihubbro} alt='' />
+                  <h2>#<span className='spaning'>3</span></h2>
               </div>
           </div>
           </SwiperSlide>
@@ -76,23 +94,33 @@ export function Banner({className}) {
 
 export default styled(Banner)`
     display: flex;
-    height: 350px;
-    width: 1000px;
+    height: 500px;
+    width: 1400px;
     border-radius: 30px;
-    background: #A1E533;
     position: relative;
     margin-bottom: 15px;
     animation: ease-in-out 4s;
     margin: 10px;
+    color: white;
+   
 .banner-content{
   display: flex;
-  padding: 20px;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 .left-content{
   display: flex;
   flex-direction: column;
- 
+  bottom: 40px;
+  position: absolute;
+  width: 100%;
+  left: 60px;
   
+}
+h1{
+  font-size: 50px;
 }
   p {
     width: 80%;
@@ -101,6 +129,16 @@ export default styled(Banner)`
 }
 .right-content{
     height: 300px;
+    right: 45px;
+    position: absolute;
+}
+h2{
+  position: absolute;
+  right: 0;
+  font-size: 80px;
+}
+.spaning{
+  color: #A1E533;
 }
 img{
     right: 0;
@@ -122,20 +160,26 @@ img{
 } */
 
 .button-explore-more{
-    width: 280px;
-    height: 75px;
+    width: 200px;
+    height: 65px;
     border-radius: 15px;
-    background: #000;
-    color: white;
+    background: #000 ;
+    text-shadow: 0px 4px 4px #000;
+    color: #A1E533;
     font-size: 1.2em;
     font-weight: bolder;
-     /* Position the button absolutely within the container */
-    bottom: 40px; 
-    left: 40px;
+    margin-top: 30px;
+    border: 1px solid #A1E533;
     
 }
 .button-explore-more:hover{
     cursor: pointer;
-    color: violet;
+    /* color: #A1E533; */
+    color: black;
+    transition: 2s;
+    text-shadow:none;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(226,233,241,1) 100%);
+    background-color: aliceblue;
 }
 `
