@@ -61,7 +61,6 @@ const MovieDetail = () => {
   };
 
   if (comments.length > 0) {
-    console.log(comments);
     commentDisplay = comments.map((commentData) => (
       <CommentDisplay
         key={commentData.commentID}

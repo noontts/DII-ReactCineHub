@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const MovieDetailCard = ({ movieID, className }) => {
-  const { favoriteMovie, addToFavorites, removeFromFavorites } = useFavorites();
+  const {favoriteMovie, addToFavorites, removeFromFavorites} = useFavorites();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);

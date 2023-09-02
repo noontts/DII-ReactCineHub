@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import MovieCard from "../components/MovieCard";
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 
 function SliderMovie({ endpoint, className }) {
