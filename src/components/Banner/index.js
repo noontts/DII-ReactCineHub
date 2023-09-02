@@ -95,7 +95,7 @@ export function Banner({className}) {
 export default styled(Banner)`
     display: flex;
     height: 500px;
-    width: 1400px;
+    width: 1250px;
     border-radius: 30px;
     position: relative;
     margin-bottom: 15px;
@@ -109,8 +109,11 @@ export default styled(Banner)`
   background-size: cover;
   background-repeat: no-repeat;
   
-  
 }
+
+.banner-content:hover{
+}
+
 .left-content{
   display: flex;
   flex-direction: column;
@@ -122,10 +125,12 @@ export default styled(Banner)`
 }
 h1{
   font-size: 50px;
+  text-shadow: 4px 4px 4px #211f1f;
+  color: #FFF;
 }
 p {
     width: 80%;
-
+    text-shadow: 2px 2px 2px #211f1f;
     font-weight: 1000;
 }
 
@@ -156,27 +161,55 @@ img{
     font-size: 1.2em;
     font-weight: bolder;
     margin-top: 30px;
-    border: 1px solid #A1E533;
+    border: 2px solid #A1E533;
+    transition: 300ms;
     
 }
 .button-explore-more:hover{
     cursor: pointer;
     /* color: #A1E533; */
-    color: black;
-    transition: 900ms;
+    color: #FFF;
+    transition: 300ms;
     text-shadow:none;
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(226,233,241,1) 100%);
-    background-color: aliceblue;
+    background: #A1E533;
+    border: 2px solid #FFFF;
+    text-shadow: 2px 2px 2px rgba(31, 31, 31, 0.3);
+    box-shadow: inset 5px 5px 5px rgba(31, 31, 31, 0.3);
+    /*background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(226,233,241,1) 100%);
+    background-color: aliceblue; */
 }
 .swiper-button-prev{
+  top: 22.5px;
+  width: 50px;
+  left: 0px;
+  height: 100%;
+  color: #A1E533;
+  transition: 300ms;
+}
 
-  color: #A1E533;
+.swiper-button-prev:hover{
+  box-shadow: 0 0 200px rgba(0,0,0,0.3) inset;
+  text-shadow: -10px 0px 1px rgba(255, 255, 255, 1);
+  transition: 300ms;
 }
+
 .swiper-button-next{
+  top: 22.5px;
+  width: 50px;
+  right: 0px;
+  height: 100%;
   color: #A1E533;
+  transition: 300ms;
 }
+
+.swiper-button-next:hover{
+  box-shadow: 0 0 200px rgba(0,0,0,0.3) inset;
+  text-shadow: 10px 0px 1px rgba(255, 255, 255, 1);
+  transition: 300ms;
+}
+
 .swiper-pagination-bullet{
   color: white;
+  background-color: #A1E533;
 }
 `
