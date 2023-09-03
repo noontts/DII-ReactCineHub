@@ -14,13 +14,19 @@ export const CommentInput = ({ className, movie_id, onNewComment }) => {
     e.preventDefault();
     try {
       // Post the comment and get the new comment data
-      const newCommentData = await newComment(`${movie_id}`, comments);
+      if(comments == ''){
 
+      }
+      else{
+        const newCommentData = await newComment(`${movie_id}`, comments);
+        onNewComment(newCommentData);
+        setComments("");
+      }
       // Call the onNewComment callback to update the comments in the parent component
-      onNewComment(newCommentData);
+      
 
       // Clear the input field
-      setComments("");
+      
     } catch (error) {
       console.error("Error adding comment:", error);
     }
