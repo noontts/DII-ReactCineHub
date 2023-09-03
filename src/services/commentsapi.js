@@ -111,7 +111,8 @@ export const deleteComment = async (movie_id, commentID) => {
     const existingComments = response.data.comments;
 
     // Find the index of the comment with the specified commentID
-    const commentIndex = existingComments.findIndex(comment => comment.commentId === commentID);
+
+    const commentIndex = existingComments.findIndex(comment => comment.commentID === commentID);
 
     // If the comment with the specified commentID is found, delete it
     if (commentIndex !== -1) {

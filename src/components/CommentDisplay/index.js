@@ -12,7 +12,7 @@ export const CommentDisplay = ({ comment, className , movie_id , comment_id , on
     };
 
     const handleDeleteClick = async () => {
-        await onDelete(movie_id, comment.commentId);
+        await onDelete(movie_id, comment.commentID);
     };
 
     const handleSaveEditedComment = (newComment) => { 

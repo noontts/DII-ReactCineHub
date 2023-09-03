@@ -52,6 +52,7 @@ const MovieDetail = () => {
 
   const handleDeleteComment = async (movie_id, comment_id) => {
     try {
+      console.log(comment_id);
       await deleteComment(movie_id, comment_id);
       const updatedComments = await fetchComment(movie_id);
       setComments(updatedComments.comments);
