@@ -14,7 +14,7 @@ export const CommentInput = ({ className, movie_id, onNewComment }) => {
     e.preventDefault();
     try {
       // Post the comment and get the new comment data
-      if(comments == ''){
+      if(comments === ''){
 
       }
       else{
